@@ -1,0 +1,16 @@
+{
+  "context": 128,
+  "batch_size": 32,
+  "steps": 2000,
+  "seed": 0,
+  "cross_session": [],
+  "within_session_prefix_diagnostic": [],
+  "within_session_split_diagnostic": [
+    {"kind": "s4d", "width": 128, "layers": 2, "state_size": 16},
+    {"kind": "gru", "width": 128},
+    {"kind": "mamba3_official", "width": 128, "layers": 2, "state_size": 16}
+  ],
+  "warmstart_io": [
+    {"kind": "s4d", "width": 128, "layers": 2, "state_size": 16, "steps": 500, "adapt_parameters": "io", "warmstart_by_task": {"m1": "results/debug_round2/m1/cross_session_s4d_w128_l2_n16_ctx128_seed0/best.pt", "m2": "results/debug_round2/m2/cross_session_s4d_w128_l2_n16_ctx128_seed0/best.pt"}}
+  ]
+}

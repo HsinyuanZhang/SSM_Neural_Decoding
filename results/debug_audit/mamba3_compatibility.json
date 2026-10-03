@@ -1,0 +1,30 @@
+{
+  "schema": "official_mamba3_siso_compatibility_v1",
+  "official_path": "/home/xinyuan/Work_host/SSM/.tools/mamba_official",
+  "expected_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+  "device": "cuda:0",
+  "torch": "2.5.1.post303",
+  "cuda_available": true,
+  "actual_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+  "status": "supported",
+  "forward_shape": [
+    32,
+    128,
+    2
+  ],
+  "backward_finite": true,
+  "causal_future_perturb_max_abs": 0.0,
+  "parameters": 343762,
+  "architecture": "2x pre-LayerNorm residual official-Mamba3 SISO + LayerNorm/SiLU FFN(2x width), final LayerNorm",
+  "triton_version": "3.5.0",
+  "triton_file": "/home/xinyuan/Work_host/SSM/.tools/mamba_deps/triton/__init__.py",
+  "kernel_module_file": "/home/xinyuan/Work_host/SSM/.tools/mamba_official/mamba_ssm/ops/triton/mamba3/mamba3_siso_combined.py",
+  "kernel_triton_file": "/home/xinyuan/Work_host/SSM/.tools/mamba_deps/triton/__init__.py",
+  "kernel_triton_matches_runtime": true,
+  "timing": {
+    "warmup": 3,
+    "iterations": 5,
+    "elapsed_seconds": 0.006629039999097586,
+    "milliseconds_per_forward": 1.3258079998195171
+  }
+}

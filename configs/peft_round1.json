@@ -1,0 +1,15 @@
+{
+  "backbone": "mamba3_official_w256_l4_n32",
+  "context": 128,
+  "batch_size": 32,
+  "seeds": [0, 1, 2],
+  "steps": 1000,
+  "rank": 4,
+  "alpha": 4,
+  "policy": "trial_causal_fixed_window",
+  "methods": ["none", "io", "lora", "bc_lora", "bc_dt", "full", "sparse_sdt_m3", "state_offset", "memba_causal"],
+  "pretrained_by_task": {
+    "m1": "results/debug_round2/latest/m1/cross_session_mamba3_official_w256_l4_n32_ctx128_seed0/best.pt",
+    "m2": "results/debug_round2/latest/m2/cross_session_mamba3_official_w256_l4_n32_ctx128_seed0/best.pt"
+  }
+}

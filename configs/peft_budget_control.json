@@ -1,0 +1,22 @@
+{
+  "backbone": "mamba3_official_w256_l4_n32",
+  "context": 128,
+  "batch_size": 32,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "steps": 1000,
+  "rank": 8,
+  "alpha": 8,
+  "policy": "trial_causal_fixed_window",
+  "methods": [
+    "bc_lora"
+  ],
+  "pretrained_by_task": {
+    "m1": "results/debug_round2/latest/m1/cross_session_mamba3_official_w256_l4_n32_ctx128_seed0/best.pt",
+    "m2": "results/debug_round2/latest/m2/cross_session_mamba3_official_w256_l4_n32_ctx128_seed0/best.pt"
+  },
+  "reason": "Match the adapter budget to rank-4 full projection LoRA."
+}

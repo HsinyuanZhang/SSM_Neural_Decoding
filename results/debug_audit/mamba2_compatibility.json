@@ -1,0 +1,35 @@
+{
+  "schema": "official_mamba2_gpu_compatibility_v1",
+  "official_path": "/home/xinyuan/Work_host/SSM/.tools/mamba_official",
+  "expected_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+  "device": "cuda:0",
+  "torch": "2.5.1.post303",
+  "architecture": "2x pre-LayerNorm residual official-Mamba2 + LayerNorm/SiLU FFN(2x width), final LayerNorm",
+  "official_core": {
+    "use_mem_eff_path": false,
+    "headdim": 64,
+    "state_size": 16,
+    "chunk_size": 64
+  },
+  "actual_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+  "status": "supported",
+  "forward_shape": [
+    32,
+    128,
+    2
+  ],
+  "backward_finite": true,
+  "causal_future_perturb_max_abs": 0.0,
+  "parameters": 343770,
+  "triton_version": "3.5.0",
+  "triton_file": "/home/xinyuan/Work_host/SSM/.tools/mamba_deps/triton/__init__.py",
+  "kernel_module_file": "/home/xinyuan/Work_host/SSM/.tools/mamba_official/mamba_ssm/ops/triton/ssd_combined.py",
+  "kernel_triton_file": "/home/xinyuan/Work_host/SSM/.tools/mamba_deps/triton/__init__.py",
+  "kernel_triton_matches_runtime": true,
+  "timing": {
+    "warmup": 3,
+    "iterations": 5,
+    "elapsed_seconds": 0.005999202840030193,
+    "milliseconds_per_forward": 1.1998405680060387
+  }
+}

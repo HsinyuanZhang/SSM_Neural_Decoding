@@ -1,0 +1,15 @@
+{
+  "name": "round1_real_falcon_ssm_pilot",
+  "scope": "non-official held-in/minival temporal development; never held-out or EvalAI",
+  "tasks": ["m1", "m2"],
+  "kinds": ["diag", "osc", "bank", "selective", "gru"],
+  "seeds": [0, 1, 2],
+  "width": 64,
+  "sequence": 50,
+  "batch_size": 32,
+  "steps": 1200,
+  "learning_rate": 0.001,
+  "support_trials": [5, 10, 33],
+  "adaptations": ["zero", "ridge", "rls", "delta"],
+  "checkpoint_selection": "fixed_update_budget_only; query never selects checkpoints"
+}

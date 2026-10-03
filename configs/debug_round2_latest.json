@@ -1,0 +1,15 @@
+{
+  "base_launch_manifest": "results/debug_round2/launch_manifest.json is authoritative for the running main matrix",
+  "context": 128,
+  "batch_size": 32,
+  "steps": 2000,
+  "seed": 0,
+  "cross_session": [
+    {"kind": "s4d", "width": 384, "layers": 4, "state_size": 16},
+    {"kind": "mamba3_official", "width": 128, "layers": 2, "state_size": 16},
+    {"kind": "mamba3_official", "width": 256, "layers": 4, "state_size": 32}
+  ],
+  "within_session_prefix_diagnostic": [
+    {"kind": "mamba3_official", "width": 128, "layers": 2, "state_size": 16}
+  ]
+}

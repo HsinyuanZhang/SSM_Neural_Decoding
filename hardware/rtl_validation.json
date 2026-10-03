@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-03",
+  "tool": {
+    "name": "Icarus Verilog",
+    "version": "11.0-1.1 (Ubuntu jammy package)",
+    "installation": "workspace-local extraction under SSM/.tools/iverilog; no system package mutation",
+    "compiler": ".tools/iverilog/usr/bin/iverilog",
+    "library_path": ".tools/iverilog/usr/lib/x86_64-linux-gnu/ivl",
+    "runtime": ".tools/iverilog/usr/bin/vvp"
+  },
+  "design": "hardware/real2x2_ssm_engine.sv",
+  "testbench": "hardware/tb_real2x2_ssm_engine.sv",
+  "vectors": "hardware/fixedpoint_vectors.txt",
+  "vector_count": 256,
+  "result": "PASS 256 fixed-point vectors",
+  "semantics": "Python and RTL match for Q1.14 coefficients, wide accumulation, nearest/ties-away rounding, and signed saturation count."
+}

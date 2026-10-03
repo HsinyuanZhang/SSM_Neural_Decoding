@@ -1,0 +1,43 @@
+task,family,kind,seed,support_trials,lags,feature_dim,r2_variance_weighted,readout_bytes_float64,readout_macs_per_bin
+m1,direct_neural_ridge,,,5,[0],64,0.12942105531692505,8320,1024
+m1,direct_neural_ridge,,,5,"[0, 1, 2, 4]",256,-0.31903576850891113,32896,4096
+m1,direct_neural_ridge,,,10,[0],64,0.253665566444397,8320,1024
+m1,direct_neural_ridge,,,10,"[0, 1, 2, 4]",256,0.18659865856170654,32896,4096
+m1,direct_neural_ridge,,,33,[0],64,0.31810909509658813,8320,1024
+m1,direct_neural_ridge,,,33,"[0, 1, 2, 4]",256,0.37093597650527954,32896,4096
+m1,frozen_latent64_residual_ridge,diag,0,5,,64,-0.2489326000213623,8320,1024
+m1,frozen_latent64_residual_ridge,diag,0,10,,64,-0.008674263954162598,8320,1024
+m1,frozen_latent64_residual_ridge,diag,0,33,,64,0.2884187698364258,8320,1024
+m1,frozen_latent64_residual_ridge,osc,0,5,,64,0.2056136131286621,8320,1024
+m1,frozen_latent64_residual_ridge,osc,0,10,,64,0.3082432746887207,8320,1024
+m1,frozen_latent64_residual_ridge,osc,0,33,,64,0.44881653785705566,8320,1024
+m1,frozen_latent64_residual_ridge,bank,0,5,,64,-0.13058090209960938,8320,1024
+m1,frozen_latent64_residual_ridge,bank,0,10,,64,-0.014224052429199219,8320,1024
+m1,frozen_latent64_residual_ridge,bank,0,33,,64,0.37916797399520874,8320,1024
+m1,frozen_latent64_residual_ridge,selective,0,5,,64,-0.395571231842041,8320,1024
+m1,frozen_latent64_residual_ridge,selective,0,10,,64,-0.12832152843475342,8320,1024
+m1,frozen_latent64_residual_ridge,selective,0,33,,64,0.24244827032089233,8320,1024
+m1,frozen_latent64_residual_ridge,gru,0,5,,64,0.2901126742362976,8320,1024
+m1,frozen_latent64_residual_ridge,gru,0,10,,64,0.364865779876709,8320,1024
+m1,frozen_latent64_residual_ridge,gru,0,33,,64,0.4423757791519165,8320,1024
+m2,direct_neural_ridge,,,5,[0],96,-2.479940891265869,1552,192
+m2,direct_neural_ridge,,,5,"[0, 1, 2, 4]",384,-20.835371017456055,6160,768
+m2,direct_neural_ridge,,,10,[0],96,-2.5597918033599854,1552,192
+m2,direct_neural_ridge,,,10,"[0, 1, 2, 4]",384,-7.628401756286621,6160,768
+m2,direct_neural_ridge,,,33,[0],96,-0.974350094795227,1552,192
+m2,direct_neural_ridge,,,33,"[0, 1, 2, 4]",384,-2.3349504470825195,6160,768
+m2,frozen_latent64_residual_ridge,diag,0,5,,64,-5.058935165405273,1040,128
+m2,frozen_latent64_residual_ridge,diag,0,10,,64,-9.051909446716309,1040,128
+m2,frozen_latent64_residual_ridge,diag,0,33,,64,-2.834815502166748,1040,128
+m2,frozen_latent64_residual_ridge,osc,0,5,,64,-2.279649019241333,1040,128
+m2,frozen_latent64_residual_ridge,osc,0,10,,64,-3.6789937019348145,1040,128
+m2,frozen_latent64_residual_ridge,osc,0,33,,64,-1.4912137985229492,1040,128
+m2,frozen_latent64_residual_ridge,bank,0,5,,64,-5.665999412536621,1040,128
+m2,frozen_latent64_residual_ridge,bank,0,10,,64,-8.22846794128418,1040,128
+m2,frozen_latent64_residual_ridge,bank,0,33,,64,-1.9685730934143066,1040,128
+m2,frozen_latent64_residual_ridge,selective,0,5,,64,-17.05425262451172,1040,128
+m2,frozen_latent64_residual_ridge,selective,0,10,,64,-43.3322639465332,1040,128
+m2,frozen_latent64_residual_ridge,selective,0,33,,64,-5.237679958343506,1040,128
+m2,frozen_latent64_residual_ridge,gru,0,5,,64,-1.549095869064331,1040,128
+m2,frozen_latent64_residual_ridge,gru,0,10,,64,-2.1309306621551514,1040,128
+m2,frozen_latent64_residual_ridge,gru,0,33,,64,-0.9575701951980591,1040,128

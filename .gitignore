@@ -1,0 +1,45 @@
+# Local tools, environments, and generated Python metadata
+.tools/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Local credentials and raw datasets
+.env
+.env.*
+*.pem
+*.p12
+*.pfx
+*.nwb
+*.h5
+*.hdf5
+
+# Checkpoints, predictions, and execution logs stay local.
+*.pt
+*.ckpt
+*.npz
+*.log
+
+# Keep only the publication-facing, compact result artifacts.
+results/*
+!results/analysis/
+!results/analysis/**
+!results/debug_audit/
+!results/debug_audit/*.json
+!results/peft_round1/
+results/peft_round1/*
+!results/peft_round1/review/
+!results/peft_round1/review/**
+!results/peft_round1/official_w256_l4_n32/
+results/peft_round1/official_w256_l4_n32/*
+!results/peft_round1/official_w256_l4_n32/code_snapshot/
+!results/peft_round1/official_w256_l4_n32/code_snapshot/**
+!results/peft_round1/bc_rank8_budget_control/
+results/peft_round1/bc_rank8_budget_control/*
+!results/peft_round1/bc_rank8_budget_control/code_snapshot/
+!results/peft_round1/bc_rank8_budget_control/code_snapshot/**

@@ -1,0 +1,24 @@
+{
+  "verified_against_fit_start_hashes": {
+    "peft_experiment.py": "d28cfe432445d3e42a9affd3cebb268d05c29ab2f9146db743ebfe555eb093ae",
+    "peft.py": "e100021dff40cb9538700f8d2c14a6e25140263c2ad4ceeebd9275ad3c1ec77b",
+    "debug_experiment.py": "8f82fa061fac7cb1e2936af8c49ba3bd7822309dfad0f9ad91601457c1bb2828",
+    "calibration.py": "234beff0b3b836c745f15c05f87ddca0026c0798333be9364264c964d585eb9f",
+    "sparse_state_tuning.py": "7cfbe3e3dfa5570540156c60ca45a2724453a0c96719143e65978faee903c192",
+    "mamba3_research_adapters.py": "2db1cd6356858e12d2526563376dfe745bb18536d438e37c2de81fc33fed24a6",
+    "data.py": "d16b0d37b8e4447b5c399cfdbb99c4f8127c3566211c510120094d6eff4d22c7",
+    "mamba3_official.py": "ddef8bee9b286fd061cf4c1c0e7f832dff781492f818bbd8ad4c88afb3dc6e7b"
+  },
+  "created_after_start": true,
+  "python": "3.10.15 | packaged by conda-forge | (main, Oct 16 2024, 01:24:24) [GCC 13.3.0]",
+  "executable": "/home/xinyuan/miniconda3/envs/spint/bin/python",
+  "packages_with_formal_isolated_pythonpath": {
+    "torch": "2.5.1.post303",
+    "numpy": "2.0.1",
+    "h5py": "3.12.1",
+    "pynwb": "2.8.2",
+    "triton": "3.5.0",
+    "einops": "0.8.2",
+    "huggingface-hub": "0.27.1"
+  }
+}

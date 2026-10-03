@@ -1,0 +1,49 @@
+{
+  "formal_modern_fit_count": 44,
+  "width_only_fit_count": 8,
+  "summary_score_rows": 340,
+  "sampling_audit_score_rows": 8,
+  "all_formal_checkpoints_logs_normalizers_manifests_predictions_present": true,
+  "startup_hash_snapshot_count": 21,
+  "early_runs_without_independent_startup_snapshot": [
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/latest/m1/cross_session_mamba3_official_w128_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/latest/m1/cross_session_s4d_w384_l4_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/latest/m2/cross_session_s4d_w384_l4_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m1/cross_session_gru_w128_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m1/cross_session_mamba2_w128_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m1/cross_session_mamba2_w256_l4_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m1/cross_session_osc_w256_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m1/cross_session_osc_w64_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m1/cross_session_s4d_w128_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m1/cross_session_s4d_w256_l4_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m1/cross_session_s4d_w64_l1_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m1/within_session_prefix_gru_w128_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m1/within_session_prefix_s4d_w128_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m2/cross_session_gru_w128_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m2/cross_session_mamba2_w128_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m2/cross_session_mamba2_w256_l4_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m2/cross_session_osc_w256_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m2/cross_session_osc_w64_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m2/cross_session_s4d_w128_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m2/cross_session_s4d_w256_l4_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m2/cross_session_s4d_w64_l1_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m2/within_session_prefix_gru_w128_l2_n16_ctx128_seed0",
+    "/home/xinyuan/Work_host/SSM/results/debug_round2/m2/within_session_prefix_s4d_w128_l2_n16_ctx128_seed0"
+  ],
+  "cpu_relevant_tests": {
+    "passed": 37,
+    "seconds": 1.96,
+    "files": [
+      "test_modern_models.py",
+      "test_debug_experiment.py",
+      "test_data.py",
+      "test_core.py",
+      "test_mamba2_official.py",
+      "test_context_experiment.py"
+    ]
+  },
+  "notes": [
+    "Missing historical startup snapshots are not backfilled.",
+    "Query cohorts and trial/recording context policies remain explicit."
+  ]
+}
