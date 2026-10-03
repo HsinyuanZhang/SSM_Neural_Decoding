@@ -1,0 +1,44 @@
+{
+  "schema": "ssm_private_controller_active_intent_independent_audit_v1",
+  "status": "GO",
+  "scope": "Current-byte offline review of the optional active-intent authorization gate",
+  "reviewed_files": [
+    {
+      "path": "scripts/submit_ssm_evalai_private.py",
+      "sha256": "93c1bbc5a9668d492ffa969b05c761f49b4710acc5939bdfbe65e4e2633714eb"
+    },
+    {
+      "path": "tests/test_evalai_private_controller.py",
+      "sha256": "b089e28638b1e90f3b03b01c8cf1e56829e84ae2f7f186b009513928ce904079"
+    }
+  ],
+  "verification": {
+    "offline_tests_passed": 57,
+    "offline_tests_status": "PASS",
+    "python_compile_status": "PASS",
+    "diff_check_status": "PASS"
+  },
+  "contract_checks": {
+    "default_blocks_all_active_submissions": true,
+    "explicit_authorization_flag_required": true,
+    "intent_schema_team_phase_and_confirmation_checked": true,
+    "intent_and_active_private_row_match_one_to_one": true,
+    "submission_id_method_and_server_markers_match": true,
+    "prior_and_current_candidate_bindings_differ": true,
+    "unmatched_or_additional_active_rows_block_execution": true,
+    "current_candidate_duplicate_checks_preserved": true,
+    "preflight_omits_image_uri_and_credentials": true
+  },
+  "change_boundary": {
+    "numerical_files_changed": false,
+    "model_files_changed": false,
+    "model_or_performance_selection_changed": false
+  },
+  "reviewer_operations": {
+    "network_used": false,
+    "docker_used": false,
+    "image_push_attempted": false,
+    "private_post_attempted": false
+  },
+  "operational_note": "The actual M2 submission used the default controller path after the earlier submission became terminal. The optional active-intent authorization was not used. A parallel invocation stopped on the local lock before POST, and no duplicate submission was created."
+}

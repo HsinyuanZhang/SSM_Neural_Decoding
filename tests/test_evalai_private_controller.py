@@ -501,6 +501,276 @@ def test_method_name_duplicate_gate_is_independent_of_audit_hash():
     assert ctl.candidate_rows(rows, "a" * 64) == []
 
 
+def confirmed_active_intent(tmp_path, *, name="prior_intent.json", submission_id=73, method_name="prior method", audit_sha=None):
+    audit_sha = audit_sha or "b" * 64
+    uri = "123456789012.dkr.ecr.us-east-1.amazonaws.com/participant-team-42279:prior"
+    state = {
+        "schema": "ssm_evalai_private_intent_v1",
+        "team": ctl.TEAM,
+        "phase": ctl.PHASE,
+        "post_attempted": True,
+        "post_confirmed_utc": "2026-10-03T00:00:00+00:00",
+        "submission_id": submission_id,
+        "submitted_image_uri": uri,
+        "candidate_audit_sha256": audit_sha,
+        "method_name": method_name,
+    }
+    path = tmp_path / name
+    write_json(path, state)
+    row = {
+        "id": submission_id,
+        "status": "running",
+        "is_public": False,
+        "participant_team": ctl.TEAM,
+        "challenge_phase": ctl.PHASE,
+        "method_name": method_name,
+        "method_description": f"SSM private candidate image_uri={uri}; audit_manifest_sha256={audit_sha}",
+    }
+    return path, state, row
+
+
+def test_allow_active_intent_accepts_confirmed_distinct_real_shape_without_persisting_uri(tmp_path):
+    path, _, row = confirmed_active_intent(tmp_path)
+    allowed, receipt = ctl.allow_authenticated_active_intents(
+        [path], [row], "current method", "a" * 64
+    )
+    assert allowed == [row]
+    assert receipt == [{
+        "intent_path": str(path.resolve()),
+        "intent_sha256": ctl.sha256(path),
+        "submission_id": 73,
+    }]
+    encoded = json.dumps(receipt)
+    assert "image_uri" not in encoded
+    assert "method_description" not in encoded
+    assert "123456789012.dkr" not in encoded
+
+
+@pytest.mark.parametrize(
+    ("state_updates", "row_updates", "message"),
+    [
+        ({"schema": "forged"}, {}, "confirmed private"),
+        ({"team": ctl.TEAM + 1}, {}, "confirmed private"),
+        ({"team": True}, {}, "confirmed private"),
+        ({"phase": ctl.PHASE + 1}, {}, "confirmed private"),
+        ({"phase": True}, {}, "confirmed private"),
+        ({"post_attempted": False}, {}, "confirmed private"),
+        ({"post_confirmed_utc": ""}, {}, "confirmed private"),
+        ({"post_confirmed_utc": None}, {}, "confirmed private"),
+        ({"post_confirmed_utc": "forged"}, {}, "confirmed private"),
+        ({"post_confirmed_utc": "2026-10-03T00:00:00"}, {}, "confirmed private"),
+        ({"submission_id": True}, {}, "exact server reconciliation"),
+        ({"submission_id": 0}, {}, "exact server reconciliation"),
+        ({"submission_id": 74}, {}, "exactly one active"),
+        ({}, {"is_public": True}, "active server row differ"),
+        ({}, {"participant_team": ctl.TEAM + 1}, "active server row differ"),
+        ({}, {"challenge_phase": ctl.PHASE + 1}, "active server row differ"),
+        ({}, {"id": True}, "exactly one active"),
+        ({}, {"method_name": "forged method"}, "active server row differ"),
+        ({}, {"method_description": "SSM private candidate image_uri=forged; audit_manifest_sha256=" + "b" * 64}, "active server row differ"),
+    ],
+)
+def test_allow_active_intent_rejects_forged_or_unconfirmed_bindings(tmp_path, state_updates, row_updates, message):
+    path, state, row = confirmed_active_intent(tmp_path)
+    state.update(state_updates)
+    write_json(path, state)
+    row.update(row_updates)
+    with pytest.raises(RuntimeError, match=message):
+        ctl.allow_authenticated_active_intents([path], [row], "current method", "a" * 64)
+
+
+@pytest.mark.parametrize(
+    ("method_name", "audit_sha"),
+    [("current method", "b" * 64), ("prior method", "a" * 64)],
+)
+def test_allow_active_intent_rejects_current_method_or_candidate(tmp_path, method_name, audit_sha):
+    path, _, row = confirmed_active_intent(tmp_path, method_name=method_name, audit_sha=audit_sha)
+    with pytest.raises(RuntimeError, match="different method and candidate"):
+        ctl.allow_authenticated_active_intents([path], [row], "current method", "a" * 64)
+
+
+def test_allow_active_intent_requires_one_to_one_current_active_mapping(tmp_path):
+    path, state, row = confirmed_active_intent(tmp_path)
+    with pytest.raises(RuntimeError, match="path is repeated"):
+        ctl.allow_authenticated_active_intents([path, path], [row], "current method", "a" * 64)
+
+    copy = tmp_path / "identical_intent.json"
+    copy.write_bytes(path.read_bytes())
+    with pytest.raises(RuntimeError, match="content is repeated"):
+        ctl.allow_authenticated_active_intents([path, copy], [row], "current method", "a" * 64)
+
+    duplicate_row = dict(row, status="queued")
+    with pytest.raises(RuntimeError, match="exactly one active"):
+        ctl.allow_authenticated_active_intents([path], [row, duplicate_row], "current method", "a" * 64)
+
+    second = dict(state, post_confirmed_utc="2026-10-03T00:01:00+00:00")
+    second_path = tmp_path / "second_intent.json"
+    write_json(second_path, second)
+    with pytest.raises(RuntimeError, match="same submission ID"):
+        ctl.allow_authenticated_active_intents([path, second_path], [row], "current method", "a" * 64)
+
+    with pytest.raises(RuntimeError, match="exactly one active"):
+        ctl.allow_authenticated_active_intents([path], [], "current method", "a" * 64)
+
+    terminal = dict(row, status="finished")
+    with pytest.raises(RuntimeError, match="active server row differ"):
+        ctl.allow_authenticated_active_intents([path], [terminal], "current method", "a" * 64)
+
+
+def install_main_preflight_fakes(tmp_path, monkeypatch, rows):
+    manifest = {"method_name": "current method", "image": {"image_id": "sha256:" + "a" * 64}}
+    candidate_manifest = tmp_path / "current_audit.json"
+    candidate_manifest.write_text("current audit", encoding="utf-8")
+    monkeypatch.setattr(ctl, "GLOBAL_LOCK", tmp_path / "global.lock")
+    monkeypatch.setattr(ctl, "bearer", lambda: "token")
+    monkeypatch.setattr(ctl, "audit_manifest", lambda *args: manifest.copy())
+    monkeypatch.setattr(ctl, "validate_local_image", lambda *args: None)
+    monkeypatch.setattr(ctl, "identity_and_quota", lambda token: {
+        "remaining_submissions_this_month_count": 1,
+        "remaining_submissions_today_count": 1,
+        "remaining_submissions_count": 1,
+    })
+    monkeypatch.setattr(ctl, "list_submissions", lambda token: rows)
+    return candidate_manifest
+
+
+def test_main_active_intent_preflight_receipt_and_default_block(tmp_path, monkeypatch):
+    path, _, row = confirmed_active_intent(tmp_path)
+    candidate_manifest = install_main_preflight_fakes(tmp_path, monkeypatch, [row])
+    receipt_dir = tmp_path / "receipt"
+    base = ["controller", "--image", "image", "--task", "m1", "--candidate-manifest", str(candidate_manifest), "--receipt-dir", str(receipt_dir)]
+
+    monkeypatch.setattr(sys, "argv", base + ["--preflight", "--allow-active-intent", str(path)])
+    ctl.main()
+    preflight = json.loads((receipt_dir / "preflight.json").read_text())
+    assert preflight["active_submission_ids"] == [73]
+    assert preflight["allowed_active_submission_ids"] == [73]
+    assert preflight["blocked_active_submission_ids"] == []
+    assert preflight["allowed_active_intents"] == [{
+        "intent_path": str(path.resolve()), "intent_sha256": ctl.sha256(path), "submission_id": 73,
+    }]
+    encoded = json.dumps(preflight)
+    assert "method_description" not in encoded
+    assert "123456789012.dkr" not in encoded
+
+    monkeypatch.setattr(sys, "argv", base + ["--execute"])
+    with pytest.raises(RuntimeError, match="active or duplicate"):
+        ctl.main()
+    blocked = json.loads((receipt_dir / "preflight.json").read_text())
+    assert blocked["allowed_active_submission_ids"] == []
+    assert blocked["blocked_active_submission_ids"] == [73]
+
+
+def test_main_accepts_repeatable_active_intent_paths_and_rejects_unused_terminal_path(tmp_path, monkeypatch):
+    first_path, _, first = confirmed_active_intent(tmp_path, submission_id=73)
+    second_path, _, second = confirmed_active_intent(
+        tmp_path, name="second.json", submission_id=74, method_name="second prior method", audit_sha="c" * 64
+    )
+    candidate_manifest = install_main_preflight_fakes(tmp_path, monkeypatch, [first, second])
+    receipt_dir = tmp_path / "receipt"
+    base = ["controller", "--preflight", "--image", "image", "--task", "m1", "--candidate-manifest", str(candidate_manifest), "--receipt-dir", str(receipt_dir)]
+    monkeypatch.setattr(sys, "argv", base + [
+        "--allow-active-intent", str(first_path), "--allow-active-intent", str(second_path),
+    ])
+    ctl.main()
+    preflight = json.loads((receipt_dir / "preflight.json").read_text())
+    assert preflight["allowed_active_submission_ids"] == [73, 74]
+    assert [entry["intent_sha256"] for entry in preflight["allowed_active_intents"]] == [
+        ctl.sha256(first_path), ctl.sha256(second_path),
+    ]
+
+    terminal = dict(first, status="finished")
+    terminal_receipt = tmp_path / "terminal_receipt"
+    candidate_manifest = install_main_preflight_fakes(tmp_path, monkeypatch, [terminal])
+    monkeypatch.setattr(sys, "argv", [
+        "controller", "--preflight", "--image", "image", "--task", "m1", "--candidate-manifest", str(candidate_manifest),
+        "--receipt-dir", str(terminal_receipt), "--allow-active-intent", str(first_path),
+    ])
+    with pytest.raises(RuntimeError, match="exactly one active"):
+        ctl.main()
+
+
+def test_main_execute_crosses_only_authenticated_active_intent_gate(tmp_path, monkeypatch):
+    path, _, permitted = confirmed_active_intent(tmp_path)
+    candidate_manifest = install_main_preflight_fakes(tmp_path, monkeypatch, [permitted])
+    receipt_dir = tmp_path / "receipt"
+    calls = []
+    monkeypatch.setattr(ctl, "ecr_binding", lambda token: {
+        "repository": "123456789012.dkr.ecr.us-east-1.amazonaws.com/participant-team-42279", "account": "123456789012",
+    })
+    monkeypatch.setattr(ctl, "push_image", lambda image, image_id, uri, binding: calls.append(("push", image, image_id, uri)))
+    monkeypatch.setattr(ctl, "post_private", lambda token, manifest, uri, directory: calls.append(("post", uri)) or {
+        "id": 91, "participant_team": ctl.TEAM, "challenge_phase": ctl.PHASE, "is_public": False, "status": "submitted",
+    })
+    monkeypatch.setattr(ctl, "poll_until_terminal", lambda token, submission_id, timeout: calls.append(("poll", submission_id)) or {
+        "id": submission_id, "status": "finished", "is_public": False,
+    })
+    monkeypatch.setattr(sys, "argv", [
+        "controller", "--execute", "--image", "image", "--task", "m1", "--candidate-manifest", str(candidate_manifest),
+        "--receipt-dir", str(receipt_dir), "--allow-active-intent", str(path),
+    ])
+    ctl.main()
+    assert [call[0] for call in calls] == ["push", "post", "poll"]
+    intent = json.loads((receipt_dir / "intent.json").read_text())
+    assert intent["post_attempted"] is True
+    assert intent["submission_id"] == 91
+    assert ctl.confirmed_utc(intent["post_confirmed_utc"])
+    assert json.loads((receipt_dir / "terminal_91.json").read_text())["submission"]["status"] == "finished"
+
+
+def test_main_keeps_current_candidate_and_method_duplicate_gates_after_active_allowance(tmp_path, monkeypatch):
+    path, _, permitted = confirmed_active_intent(tmp_path)
+    rows = [permitted]
+    candidate_manifest = install_main_preflight_fakes(tmp_path, monkeypatch, rows)
+    current_audit = ctl.sha256(candidate_manifest)
+    receipt_dir = tmp_path / "receipt"
+    base = [
+        "controller", "--execute", "--image", "image", "--task", "m1", "--candidate-manifest", str(candidate_manifest),
+        "--receipt-dir", str(receipt_dir), "--allow-active-intent", str(path),
+    ]
+    current_audit_duplicate = {
+        "id": 90, "status": "finished", "is_public": False,
+        "participant_team": ctl.TEAM, "challenge_phase": ctl.PHASE, "method_name": "old method",
+        "method_description": f"SSM private candidate image_uri=repo:old; audit_manifest_sha256={current_audit}",
+    }
+    rows.append(current_audit_duplicate)
+    monkeypatch.setattr(sys, "argv", base)
+    with pytest.raises(RuntimeError, match="active or duplicate"):
+        ctl.main()
+    preflight = json.loads((receipt_dir / "preflight.json").read_text())
+    assert preflight["allowed_active_submission_ids"] == [73]
+    assert preflight["candidate_audit_duplicate_submission_ids"] == [90]
+
+    rows.pop()
+    rows.append({
+        "id": 92, "status": "finished", "is_public": False,
+        "participant_team": ctl.TEAM, "challenge_phase": ctl.PHASE, "method_name": "current method",
+        "method_description": "SSM private candidate image_uri=repo:old; audit_manifest_sha256=" + "c" * 64,
+    })
+    with pytest.raises(RuntimeError, match="active or duplicate"):
+        ctl.main()
+    preflight = json.loads((receipt_dir / "preflight.json").read_text())
+    assert preflight["allowed_active_submission_ids"] == [73]
+    assert preflight["method_name_duplicate_submission_ids"] == [92]
+
+
+def test_main_blocks_mixture_when_only_one_active_row_is_explicitly_allowed(tmp_path, monkeypatch):
+    path, _, permitted = confirmed_active_intent(tmp_path)
+    unauthorized = dict(permitted, id=74, method_name="other prior method")
+    unauthorized["method_description"] = unauthorized["method_description"].replace("prior", "other")
+    candidate_manifest = install_main_preflight_fakes(tmp_path, monkeypatch, [permitted, unauthorized])
+    receipt_dir = tmp_path / "receipt"
+    monkeypatch.setattr(sys, "argv", [
+        "controller", "--execute", "--image", "image", "--task", "m1", "--candidate-manifest", str(candidate_manifest),
+        "--receipt-dir", str(receipt_dir), "--allow-active-intent", str(path),
+    ])
+    with pytest.raises(RuntimeError, match="active or duplicate"):
+        ctl.main()
+    preflight = json.loads((receipt_dir / "preflight.json").read_text())
+    assert preflight["allowed_active_submission_ids"] == [73]
+    assert preflight["blocked_active_submission_ids"] == [74]
+
+
 def test_main_negative_gates_never_reach_push_or_post(tmp_path, monkeypatch):
     manifest = {"method_name": "m", "image": {"image_id": "sha256:" + "a" * 64}}
     calls = []

@@ -233,6 +233,101 @@ def candidate_rows(team_rows: list[dict[str, Any]], audit_sha: str) -> list[dict
     return matches
 
 
+def confirmed_utc(value: Any) -> bool:
+    if not isinstance(value, str) or not value:
+        return False
+    try:
+        parsed = dt.datetime.fromisoformat(value)
+    except ValueError:
+        return False
+    return parsed.tzinfo is not None and parsed.utcoffset() is not None
+
+
+def allow_authenticated_active_intents(
+    paths: list[Path], active_rows: list[dict[str, Any]], current_method_name: str, current_audit_sha: str
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Return only active rows authenticated by explicit, confirmed prior intents."""
+    if not isinstance(current_method_name, str) or not current_method_name:
+        raise RuntimeError("current candidate method name missing")
+    if not isinstance(current_audit_sha, str) or re.fullmatch(r"[0-9a-f]{64}", current_audit_sha) is None:
+        raise RuntimeError("current candidate audit hash malformed")
+    allowed: list[dict[str, Any]] = []
+    receipts: list[dict[str, Any]] = []
+    seen_paths: set[Path] = set()
+    seen_intent_hashes: set[str] = set()
+    seen_submission_ids: set[int] = set()
+    for raw_path in paths:
+        path = Path(raw_path).resolve()
+        if path in seen_paths:
+            raise RuntimeError("allow-active intent path is repeated")
+        seen_paths.add(path)
+        if not path.is_file():
+            raise RuntimeError("allow-active intent path does not exist")
+        initial_sha = sha256(path)
+        if initial_sha in seen_intent_hashes:
+            raise RuntimeError("allow-active intent content is repeated")
+        seen_intent_hashes.add(initial_sha)
+        state = load_object(path)
+        if sha256(path) != initial_sha:
+            raise RuntimeError("allow-active intent changed while being read")
+        if (
+            state.get("schema") != "ssm_evalai_private_intent_v1"
+            or isinstance(state.get("team"), bool)
+            or not isinstance(state.get("team"), int)
+            or state.get("team") != TEAM
+            or isinstance(state.get("phase"), bool)
+            or not isinstance(state.get("phase"), int)
+            or state.get("phase") != PHASE
+            or state.get("post_attempted") is not True
+            or not confirmed_utc(state.get("post_confirmed_utc"))
+        ):
+            raise RuntimeError("allow-active intent is not a confirmed private submission intent")
+        submission_id = state.get("submission_id")
+        uri, audit_sha, method_name = (
+            state.get("submitted_image_uri"), state.get("candidate_audit_sha256"), state.get("method_name")
+        )
+        if (
+            isinstance(submission_id, bool)
+            or not isinstance(submission_id, int)
+            or submission_id < 1
+            or not isinstance(uri, str)
+            or not uri
+            or not isinstance(audit_sha, str)
+            or re.fullmatch(r"[0-9a-f]{64}", audit_sha) is None
+            or not isinstance(method_name, str)
+            or not method_name
+        ):
+            raise RuntimeError("allow-active intent lacks exact server reconciliation bindings")
+        if method_name == current_method_name or audit_sha == current_audit_sha:
+            raise RuntimeError("allow-active intent must be a different method and candidate audit")
+        if submission_id in seen_submission_ids:
+            raise RuntimeError("allow-active intents authenticate the same submission ID")
+        seen_submission_ids.add(submission_id)
+        matches = [row for row in active_rows if row.get("id") == submission_id]
+        if len(matches) != 1:
+            raise RuntimeError("allow-active intent does not match exactly one active server row")
+        row = matches[0]
+        if (
+            isinstance(row.get("id"), bool)
+            or not isinstance(row.get("id"), int)
+            or row.get("id") != submission_id
+            or row.get("status") not in ACTIVE
+            or row.get("is_public") is not False
+            or isinstance(row.get("participant_team"), bool)
+            or not isinstance(row.get("participant_team"), int)
+            or row.get("participant_team") != TEAM
+            or isinstance(row.get("challenge_phase"), bool)
+            or not isinstance(row.get("challenge_phase"), int)
+            or row.get("challenge_phase") != PHASE
+            or row.get("method_name") != method_name
+            or server_markers(row) != (uri, audit_sha)
+        ):
+            raise RuntimeError("allow-active intent and active server row differ")
+        allowed.append(row)
+        receipts.append({"intent_path": str(path), "intent_sha256": initial_sha, "submission_id": submission_id})
+    return allowed, receipts
+
+
 def reconcile_prior_intent(intent: Path, team_rows: list[dict[str, Any]], receipts: Path) -> bool:
     """Return true only for a server-confirmed prior post; reject uncertainty."""
     if not intent.exists():
@@ -552,6 +647,7 @@ def main() -> None:
     parser.add_argument("--receipt-dir", type=Path, default=Path("results/official_evalai"))
     parser.add_argument("--preflight", action="store_true")
     parser.add_argument("--poll-existing", type=int)
+    parser.add_argument("--allow-active-intent", type=Path, action="append", default=[])
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--poll-timeout-seconds", type=int, default=3600)
     args = parser.parse_args()
@@ -574,21 +670,29 @@ def main() -> None:
         quota = identity_and_quota(token)
         team_rows = ours(list_submissions(token))
         intent = args.receipt_dir / "intent.json"
-        if reconcile_prior_intent(intent, team_rows, args.receipt_dir):
-            return
         active = [row for row in team_rows if row.get("status") in ACTIVE]
+        allowed_active, allowed_active_intents = allow_authenticated_active_intents(
+            args.allow_active_intent, active, manifest["method_name"], manifest["_audit_sha256"]
+        )
+        allowed_active_ids = {row["id"] for row in allowed_active}
+        blocked_active = [row for row in active if row.get("id") not in allowed_active_ids]
         duplicate_audit = candidate_rows(team_rows, manifest["_audit_sha256"])
         duplicate_method = [row for row in team_rows if row.get("method_name") == manifest["method_name"]]
         save(args.receipt_dir / "preflight.json", {
             "preflight_utc": utcnow(), "team": TEAM, "phase": PHASE, "quota": quota,
             "active_submission_ids": [row.get("id") for row in active],
+            "allowed_active_submission_ids": [row.get("id") for row in allowed_active],
+            "blocked_active_submission_ids": [row.get("id") for row in blocked_active],
+            "allowed_active_intents": allowed_active_intents,
             "candidate_audit_duplicate_submission_ids": [row.get("id") for row in duplicate_audit],
             "method_name_duplicate_submission_ids": [row.get("id") for row in duplicate_method],
             "audit_manifest_sha256": manifest["_audit_sha256"], "local_image_id": manifest["image"]["image_id"],
         })
+        if reconcile_prior_intent(intent, team_rows, args.receipt_dir):
+            return
         if args.preflight or not args.execute:
             return
-        if active or duplicate_audit or duplicate_method:
+        if blocked_active or duplicate_audit or duplicate_method:
             raise RuntimeError("active or duplicate team/phase submission prevents POST")
         binding = ecr_binding(token)
         image_uri = f"{binding['repository']}:{uuid.uuid4().hex}"
