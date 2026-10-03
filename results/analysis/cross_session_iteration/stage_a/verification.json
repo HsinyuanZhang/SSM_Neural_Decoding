@@ -1,0 +1,13 @@
+{
+  "schema": "cross_session_iteration_summary_v1",
+  "status": "verified_complete",
+  "expected_train_fits": 116,
+  "found_train_fits": 116,
+  "expected_selected_evaluations": 44,
+  "found_selected_evaluations": 44,
+  "errors": [],
+  "raw_physical_truth": true,
+  "r2": "float64 variance-weighted direct=zero primary; ridge also reported; legacy is diagnostic only",
+  "r2_oracle_tolerance": 2e-06,
+  "training_vram_is_resource_separate": true
+}

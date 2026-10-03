@@ -1,0 +1,60 @@
+{
+  "query_metrics_read_for_selection": false,
+  "methods": [
+    {
+      "task": "m2",
+      "method": "full",
+      "chosen_lr": 0.0001,
+      "candidates": [
+        {
+          "lr": 0.0001,
+          "mean_best_prefix_val_r2": 0.25945834318796795,
+          "fits": [
+            {
+              "seed": 0,
+              "fit": "/home/xinyuan/Work_host/SSM/results/stage_b_full_supplement/20261003_gpu_env_fix/small/m2/full/seed0/lr0p0001",
+              "best_pt_sha256": "59b360f10a4143899a4ef56ab2ac5f297d3b79e8c0d1b1bbf2dc191f57bb342b",
+              "best_prefix_val_r2": 0.2548348903656006,
+              "selection_admissible": true,
+              "convergence_satisfied": true,
+              "source_checkpoint_sha256": "0ff9b8f0c56c635f80a78b36c46261ff93e597186331172efe92d4db08aabe04",
+              "source_normalizer_sha256": "888418418b2ebf40f6754715eb95a7ee65ecce33db6b8a05def31a531de0c6b5",
+              "target_data_sha256": "45a41f15110a8c950f2439cddfa0c207179cfa97d1035c7b1776d2b3dba1c601"
+            },
+            {
+              "seed": 1,
+              "fit": "/home/xinyuan/Work_host/SSM/results/stage_b_full_supplement/20261003_gpu_env_fix/small/m2/full/seed1/lr0p0001",
+              "best_pt_sha256": "222e77521d525bedc60d152ab36a70784dc66ae557cdc55c8b50ed753ab26909",
+              "best_prefix_val_r2": 0.26325857639312744,
+              "selection_admissible": true,
+              "convergence_satisfied": true,
+              "source_checkpoint_sha256": "0ff9b8f0c56c635f80a78b36c46261ff93e597186331172efe92d4db08aabe04",
+              "source_normalizer_sha256": "888418418b2ebf40f6754715eb95a7ee65ecce33db6b8a05def31a531de0c6b5",
+              "target_data_sha256": "45a41f15110a8c950f2439cddfa0c207179cfa97d1035c7b1776d2b3dba1c601"
+            },
+            {
+              "seed": 2,
+              "fit": "/home/xinyuan/Work_host/SSM/results/stage_b_full_supplement/20261003_gpu_env_fix/small/m2/full/seed2/lr0p0001",
+              "best_pt_sha256": "deeb7969a1d7805c03f15e2c7ae036302023bfc2c57d80d4363565b34f2fa2f5",
+              "best_prefix_val_r2": 0.2602815628051758,
+              "selection_admissible": true,
+              "convergence_satisfied": true,
+              "source_checkpoint_sha256": "0ff9b8f0c56c635f80a78b36c46261ff93e597186331172efe92d4db08aabe04",
+              "source_normalizer_sha256": "888418418b2ebf40f6754715eb95a7ee65ecce33db6b8a05def31a531de0c6b5",
+              "target_data_sha256": "45a41f15110a8c950f2439cddfa0c207179cfa97d1035c7b1776d2b3dba1c601"
+            }
+          ],
+          "admissible": true,
+          "excluded_reasons": []
+        }
+      ],
+      "rebuilt": [
+        {
+          "lr": 0.0001,
+          "mean": 0.25945834318796795,
+          "admissible": true
+        }
+      ]
+    }
+  ]
+}

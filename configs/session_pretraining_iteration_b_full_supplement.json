@@ -1,0 +1,12 @@
+{
+  "purpose": "Supplement Stage B with the full-tuning control that was strongest in Stage A M2",
+  "task": "m2",
+  "profiles": ["small", "wide"],
+  "methods": ["full"],
+  "seeds": [0, 1, 2],
+  "lr_transfer": "Stage A prefix-selected full-tuning LR only; no query LR selection",
+  "expected_fit_entries": 6,
+  "expected_selected_evaluations": 6,
+  "protocol": "The original Stage B support and query cohorts; this does not establish the official M33 calibration budget",
+  "supplement_reason": "The original Stage B method list omitted full tuning. Stage A M2 found a stable full-tuning gain."
+}

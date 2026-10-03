@@ -1,0 +1,29 @@
+{
+  "purpose": "IO-only legal M1 M10 probe after the original probe failed a prefix-only affine+LoRA convergence gate",
+  "task": "m1",
+  "profiles": [
+    "old",
+    "small",
+    "wide"
+  ],
+  "methods": [
+    "none",
+    "io"
+  ],
+  "official_nwb_trial_budget": 10,
+  "support_segments_policy": "keep any leading neural-only pretrial segment plus the first ten real NWB trials",
+  "query_cutoff_trials": 33,
+  "validation_split": "interleaved",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "lr_transfer": "Stage A prefix validation only",
+  "policy": "recording_causal_fixed_window",
+  "expected_fit_entries": 12,
+  "expected_selected_evaluations": 12,
+  "hidden_query_access": false,
+  "candidate_scope": "development only; official outcome requires private EvalAI evaluation",
+  "method_exclusion_basis": "Original old-profile affine_lora seed2 best_step7700 of8000 rejected before any query evaluation. Exclude this method from all profiles, keep none and full-rank IO controls. Preserve the failed original root."
+}

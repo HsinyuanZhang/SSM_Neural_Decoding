@@ -1,0 +1,279 @@
+{
+  "all_required_checks_pass": true,
+  "array_contract": {
+    "all_finite": {
+      "cpu": true,
+      "saved_gpu": true,
+      "truth": true
+    },
+    "array_dtypes": {
+      "cpu": "float32",
+      "gpu": "float32",
+      "indices": "int64",
+      "truth": "float32"
+    },
+    "array_keys_exact": true,
+    "array_shapes": {
+      "cpu": [
+        14115,
+        2
+      ],
+      "gpu": [
+        14115,
+        2
+      ],
+      "indices": [
+        14115
+      ],
+      "truth": [
+        14115,
+        2
+      ]
+    },
+    "arrays_path": "/home/xinyuan/Work_host/SSM/results/analysis/cross_session_iteration/m2_unmerged_cpu_full_query_arrays.npz",
+    "arrays_sha256_actual": "e5b4ede937c55b68fbc2061522624296896c109953023950f865910b713e5291",
+    "arrays_sha256_expected": "e5b4ede937c55b68fbc2061522624296896c109953023950f865910b713e5291",
+    "arrays_sha256_match": true,
+    "max_absolute_cpu_gpu_delta": 0.0002139899879693985,
+    "prediction_shapes_equal_truth": true
+  },
+  "causality_evidence": {
+    "audited_script_path": "/home/xinyuan/Work_host/SSM/scripts/audit_ssm_unmerged_cpu.py",
+    "audited_script_sha256_actual": "ab6f45998e65e9e26581bbc8cc36134c148e6e113cee578c1ca426f126f792f5",
+    "audited_script_sha256_expected": "ab6f45998e65e9e26581bbc8cc36134c148e6e113cee578c1ca426f126f792f5",
+    "audited_script_sha256_match": true,
+    "cpu_runtime_path": "/home/xinyuan/Work_host/SSM/ssm_decode/mamba3_cpu_lora.py",
+    "cpu_runtime_sha256_actual": "4fec6b9d0e11199f5fa52b0831df02d8358649907484a52edf7bae04eae274f6",
+    "cpu_runtime_sha256_expected": "4fec6b9d0e11199f5fa52b0831df02d8358649907484a52edf7bae04eae274f6",
+    "cpu_runtime_sha256_match": true,
+    "persisted_causality_test": {
+      "compared_output_stop_exclusive": 96,
+      "comparison": "torch.equal",
+      "input_window_length": 128,
+      "perturbed_input_start": 96,
+      "static_evidence_lines": [
+        73,
+        74,
+        75,
+        76
+      ]
+    },
+    "replay_limit": "The result arrays do not persist the two causal probe output tensors; this independent audit verifies the persisted boolean and the exact script/CPU-runtime hashes that generated it, but does not rerun a model.",
+    "replayed_from_arrays": false,
+    "report_causal_prefix_bitwise_equal": true
+  },
+  "cohort_truth_mask": {
+    "count": 14115,
+    "indices_dtype": "int64",
+    "indices_exact_to_legal_m33_score_archive": true,
+    "indices_first": 2534,
+    "indices_integer": true,
+    "indices_last": 17781,
+    "indices_sha256": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+    "indices_shape": [
+      14115
+    ],
+    "indices_strictly_increasing_unique": true,
+    "mask_encoding": "allvalid_indices (the canonical legal-score cohort mask; no separate boolean mask is persisted)",
+    "saved_score_indices_sha256": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+    "saved_score_truth_sha256": "650583336ab1b53305cd1cfb6a72e3d67bcc08d8d9c67be8ef2615f77c1f7651",
+    "separate_boolean_mask_persisted": false,
+    "truth_dtype": "float32",
+    "truth_exact_to_legal_m33_score_archive": true,
+    "truth_sha256": "650583336ab1b53305cd1cfb6a72e3d67bcc08d8d9c67be8ef2615f77c1f7651",
+    "truth_shape": [
+      14115,
+      2
+    ]
+  },
+  "execution_constraints": {
+    "cuda_visible_devices": "",
+    "docker_used": false,
+    "gpu_used": false,
+    "network_requested": false,
+    "only_written_path": "/home/xinyuan/Work_host/SSM/results/analysis/cross_session_iteration/review/m2_unmerged_full_query_independent_audit.json",
+    "torch_checkpoint_load_map_location": "cpu"
+  },
+  "input_hashes": {
+    "arrays": {
+      "path": "/home/xinyuan/Work_host/SSM/results/analysis/cross_session_iteration/m2_unmerged_cpu_full_query_arrays.npz",
+      "sha256": "e5b4ede937c55b68fbc2061522624296896c109953023950f865910b713e5291"
+    },
+    "full_query_report": {
+      "path": "/home/xinyuan/Work_host/SSM/results/analysis/cross_session_iteration/m2_unmerged_cpu_full_query.json",
+      "sha256": "94679ffb28122869d93d718aff29d09eff6361e07ffb527ac3cba8175df7f7e2"
+    },
+    "legal_m33_contract": {
+      "path": "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/probe_contract.json",
+      "sha256": "e27fc31188c547170d14c20043d4f87c7fb82049fbc5f8c6c6abc4de80468422"
+    },
+    "legal_m33_lora_seed0_receipt": {
+      "path": "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/fits/lora_seed0/receipt.json",
+      "sha256": "abaff622ec2c6c187696962306d865a5deaf6d5b96b3f0c700ae2cd04c8e76f4"
+    },
+    "legal_m33_lora_seed0_score_archive": {
+      "path": "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/scores/lora_seed0.npz",
+      "sha256": "109ae7776bc40fb11a4197764d27f3300c07af804c5cb8ad59c3dfa295cbc594"
+    },
+    "legal_m33_lora_seed0_unmerged_checkpoint": {
+      "path": "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/fits/lora_seed0/unmerged_best.pt",
+      "sha256": "eb036be92a1d792ad23d12d511d3b4077911afa94b730b76b044acff72dd599b"
+    },
+    "legal_m33_summary": {
+      "path": "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/summary.json",
+      "sha256": "5393c4875c38afd14b7569a2e58e208ae3dd49b21148cd5be1fefd2ee06187ab"
+    }
+  },
+  "physical_r2_float64": {
+    "cpu_gpu_absolute_score_delta_below_limit": true,
+    "cpu_gpu_score_delta_limit": 0.001,
+    "cpu_minus_saved_gpu_r2": -3.5804027509356295e-05,
+    "cpu_physical_r2_float64": 0.5050950578234543,
+    "cpu_r2_exact_to_report": true,
+    "gpu_r2_exact_to_report": true,
+    "saved_gpu_physical_r2_float64": 0.5051308618509637,
+    "saved_merged_gpu_r2_float64": 0.5051187214026485,
+    "saved_merged_r2_exact_to_report": true,
+    "score_delta_exact_to_report": true,
+    "source_report_cpu_r2": 0.5050950578234543,
+    "source_report_gpu_r2": 0.5051308618509637,
+    "source_report_saved_merged_r2": 0.5051187214026485,
+    "source_report_score_delta": -3.5804027509356295e-05,
+    "source_report_unmerged_vs_saved_merged_delta": 1.2140448315212105e-05,
+    "unmerged_minus_saved_merged_r2": 1.2140448315212105e-05,
+    "unmerged_vs_saved_merged_exact_to_report": true
+  },
+  "reviewed_utc": "2026-10-03T14:32:41.484995+00:00",
+  "schema": "m2_unmerged_full_query_independent_audit_v1",
+  "scope": "CPU-only independent replay of completed unmerged full-query arrays",
+  "selected_wide_lora_seed0_binding": {
+    "checkpoint_best_step": 300,
+    "checkpoint_best_step_equals_receipt_and_summary": true,
+    "checkpoint_nonparameter_state_tensors": [
+      "blocks.0.ssm.in_proj.rows",
+      "blocks.0.ssm.out_proj.rows",
+      "blocks.1.ssm.in_proj.rows",
+      "blocks.1.ssm.out_proj.rows",
+      "blocks.2.ssm.in_proj.rows",
+      "blocks.2.ssm.out_proj.rows",
+      "blocks.3.ssm.in_proj.rows",
+      "blocks.3.ssm.out_proj.rows",
+      "in_proj.rows",
+      "out_proj.rows"
+    ],
+    "contract_methods": [
+      {
+        "lr": 0.0,
+        "method": "none",
+        "seed": 0
+      },
+      {
+        "lr": 0.003,
+        "method": "lora",
+        "seed": 0
+      },
+      {
+        "lr": 0.003,
+        "method": "lora",
+        "seed": 1
+      },
+      {
+        "lr": 0.003,
+        "method": "lora",
+        "seed": 2
+      }
+    ],
+    "contract_query_selection_forbidden": true,
+    "contract_schema": "official_m2_m33_probe_contract_v1",
+    "contract_source_capacity": "wide",
+    "contract_task": "m2",
+    "receipt_convergence_satisfied": true,
+    "receipt_parameter_hashes_all_match_checkpoint": true,
+    "receipt_parameter_hashes_missing_from_checkpoint": [],
+    "receipt_unmerged_state_receipt_tensor_count": 90,
+    "selected_row": {
+      "allvalid_count": 14115,
+      "best_step": 300,
+      "cohort_indices_sha256": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+      "fit": "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/fits/lora_seed0",
+      "method": "lora",
+      "model_sha256": "734d5b37d40632c3d14b17011b28520f260bac3c737fd15c9d2932065d15e97d",
+      "normalizer_sha256": "d41410f9cb2cc3c50437091e410c3cfc47c6fbd05f858532dee4027aafb6d7e4",
+      "r2": 0.5051187214026485,
+      "receipt_sha256": "abaff622ec2c6c187696962306d865a5deaf6d5b96b3f0c700ae2cd04c8e76f4",
+      "score_npz_sha256": "109ae7776bc40fb11a4197764d27f3300c07af804c5cb8ad59c3dfa295cbc594",
+      "seed": 0
+    },
+    "selected_row_count": 1,
+    "selected_row_exact_lora_seed0": true,
+    "summary_all_fits_before_query_decode": true,
+    "summary_query_not_used_for_checkpoint_or_lr_selection": true,
+    "unmerged_checkpoint_args": {
+      "device": "cuda:0",
+      "lr": 0.003,
+      "max_steps": 8000,
+      "method": "lora",
+      "seed": 0,
+      "steps": 2000
+    },
+    "unmerged_checkpoint_args_exact": true,
+    "unmerged_checkpoint_equals_report_binding": true,
+    "unmerged_checkpoint_path": "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/fits/lora_seed0/unmerged_best.pt",
+    "unmerged_checkpoint_sha256": "eb036be92a1d792ad23d12d511d3b4077911afa94b730b76b044acff72dd599b",
+    "unmerged_state_tensor_count": 100
+  },
+  "source_report_contract": {
+    "lr": 0.003,
+    "method": "lora_unmerged",
+    "query_bins": 14115,
+    "schema": "ssm_unmerged_cpu_gpu_full_query_v1",
+    "scope": "full_query",
+    "seed": 0,
+    "selected_input_file_sha256": {
+      "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_b/official_20261003/source/m2/wide/best.pt": {
+        "actual_sha256": "84f4880852cf693b26ae90b6d7fa7ceb0d98813eee63093de7473a340cd4fb3b",
+        "expected_sha256": "84f4880852cf693b26ae90b6d7fa7ceb0d98813eee63093de7473a340cd4fb3b",
+        "match": true
+      },
+      "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/fits/lora_seed0/normalizer.npz": {
+        "actual_sha256": "d41410f9cb2cc3c50437091e410c3cfc47c6fbd05f858532dee4027aafb6d7e4",
+        "expected_sha256": "d41410f9cb2cc3c50437091e410c3cfc47c6fbd05f858532dee4027aafb6d7e4",
+        "match": true
+      },
+      "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/fits/lora_seed0/receipt.json": {
+        "actual_sha256": "abaff622ec2c6c187696962306d865a5deaf6d5b96b3f0c700ae2cd04c8e76f4",
+        "expected_sha256": "abaff622ec2c6c187696962306d865a5deaf6d5b96b3f0c700ae2cd04c8e76f4",
+        "match": true
+      },
+      "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/fits/lora_seed0/unmerged_best.pt": {
+        "actual_sha256": "eb036be92a1d792ad23d12d511d3b4077911afa94b730b76b044acff72dd599b",
+        "expected_sha256": "eb036be92a1d792ad23d12d511d3b4077911afa94b730b76b044acff72dd599b",
+        "match": true
+      },
+      "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/probe_contract.json": {
+        "actual_sha256": "e27fc31188c547170d14c20043d4f87c7fb82049fbc5f8c6c6abc4de80468422",
+        "expected_sha256": "e27fc31188c547170d14c20043d4f87c7fb82049fbc5f8c6c6abc4de80468422",
+        "match": true
+      },
+      "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/scores/lora_seed0.npz": {
+        "actual_sha256": "109ae7776bc40fb11a4197764d27f3300c07af804c5cb8ad59c3dfa295cbc594",
+        "expected_sha256": "109ae7776bc40fb11a4197764d27f3300c07af804c5cb8ad59c3dfa295cbc594",
+        "match": true
+      },
+      "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/summary.json": {
+        "actual_sha256": "5393c4875c38afd14b7569a2e58e208ae3dd49b21148cd5be1fefd2ee06187ab",
+        "expected_sha256": "5393c4875c38afd14b7569a2e58e208ae3dd49b21148cd5be1fefd2ee06187ab",
+        "match": true
+      },
+      "/mnt/data/work_host/SPINT/SPINT-main/data/000953/sub-MonkeyN-held-in-calib/sub-MonkeyN-held-in-calib_ses-2020-10-28-Run1_behavior+ecephys.nwb": {
+        "actual_sha256": "45a41f15110a8c950f2439cddfa0c207179cfa97d1035c7b1776d2b3dba1c601",
+        "expected_sha256": "45a41f15110a8c950f2439cddfa0c207179cfa97d1035c7b1776d2b3dba1c601",
+        "match": true
+      }
+    },
+    "selection_boundary": "fixed caller-supplied seed0 checkpoint; no model ranking or query HPO",
+    "status": "PASS"
+  },
+  "status": "GO",
+  "task": "m2"
+}

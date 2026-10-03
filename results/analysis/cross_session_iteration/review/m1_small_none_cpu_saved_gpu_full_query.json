@@ -1,0 +1,154 @@
+{
+  "schema": "mamba3_cpu_saved_gpu_full_query_parity_v1",
+  "status": "PASS",
+  "scope": "full_query",
+  "selection_boundary": "checkpoint supplied by caller; this audit does not rank candidates",
+  "reference": "saved official GPU prediction archive",
+  "gpu_calls": 0,
+  "checkpoint": "/home/xinyuan/Work_host/SSM/results/official_m1_m10_probe/20261003_io_only/small/m1/none/seed0/lr0/best.pt",
+  "checkpoint_sha256": "c2d3071735170a9def1427b921d625e1cfe6f59c64b7793665ef0ee7794995db",
+  "source_checkpoint": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_b/official_20261003/source/m1/small/best.pt",
+  "source_checkpoint_sha256": "67bdc3cd99b98174d2c559fd1c5fa6fdd2655bbee2d810719c3e664d847998c1",
+  "source_normalizer_sha256": "47b8adcfe4ff7575171d909ada80362c79fdbe0f4ccc80cf2ce83ee3e37a4476",
+  "target_normalizer_sha256": "91ce521d3bd49b160038a3eab5153d005edbb8746339bf0a7d93df83efa6def5",
+  "target_data_sha256": "96e7f078c6acb89b802b6241a36b9c9e2d04df82c180a63354fd3f7e74357254",
+  "query_metrics": "/home/xinyuan/Work_host/SSM/results/official_m1_m10_probe/20261003_io_only/small/m1/none/seed0/lr0/query_evaluation/metrics.json",
+  "query_metrics_sha256": "2c5d60f4dedb4f8fbf1a30e0ff08d3a02f2cf5e5acd83cbb7164c5921a51ca14",
+  "saved_predictions": "/home/xinyuan/Work_host/SSM/results/official_m1_m10_probe/20261003_io_only/small/m1/none/seed0/lr0/query_evaluation/predictions.npz",
+  "saved_predictions_sha256": "a504811743cf4b8da344cf973b9281f64e3f56aeb340f5ab07313267944a4e2b",
+  "method": "none",
+  "seed": 0,
+  "lr": 0.0,
+  "support_trials_field": 11,
+  "query_cutoff_trials_field": 33,
+  "policy": "recording_causal_fixed_window",
+  "target_session": "20120928",
+  "n_query_bounds": 380,
+  "n_all_valid_query_bins": 50591,
+  "cohort_exact_to_saved_gpu": true,
+  "truth_exact_to_saved_gpu": true,
+  "cohort_sha256": "5b8be6ddfbd58edc28097c500b5e52532db4a711b2f2537a3c4c6cbc92936728",
+  "truth_sha256": "568f0dd011896025aa72adfb09d740a01f436e765717a1474623c15892bc18d4",
+  "saved_gpu_prediction_sha256": "68bad15984f6af0489eacc27a6477263933d5b4a1da2cc549346a5e9b13bfc38",
+  "cpu_prediction_sha256": "270ecb74eab8ae5f92b23fdec4cc60bbb709e9e3f3673fcadf96f23f34d9c2e1",
+  "source_state_tensor_exact": true,
+  "normalizer_exact_to_checkpoint": true,
+  "saved_gpu_physical_r2": 0.688083248834211,
+  "cpu_physical_r2": 0.6880879375321609,
+  "score_delta": 4.6886979498950154e-06,
+  "absolute_score_delta": 4.6886979498950154e-06,
+  "saved_score_oracle_delta": 4.221956095840085e-08,
+  "saved_gpu_sse": 33612.27822410068,
+  "cpu_sse": 33611.7729680687,
+  "sst": 107760.41395171874,
+  "pointwise": {
+    "mean_signed": -1.333424212555904e-07,
+    "mean_absolute": 0.00029437704111827373,
+    "rms": 0.0005970833689925026,
+    "max_absolute": 0.017590999025799192
+  },
+  "all_values_finite": true,
+  "causality": {
+    "perturbed_input_start": 96,
+    "checked_output_stop_exclusive": 96,
+    "prefix_bitwise_equal": true,
+    "prefix_max_absolute_delta": 0.0
+  },
+  "cpu": {
+    "decoder_class": "ssm_decode.mamba3_cpu.CPUDecoder",
+    "decoder_sha256": "6028763e79789d5fcca4943c53f3e420cec98bedf4a2575651a47561aacb1dbd",
+    "threads": 2,
+    "batch_size": 16,
+    "seconds": 45.70103288581595
+  },
+  "runtime_identity": {
+    "torch": "2.5.1.post303",
+    "cuda": "11.8",
+    "official_expected": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+    "official_actual": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+    "triton": "3.5.0"
+  },
+  "torch": "2.5.1.post303",
+  "script_sha256": "e2d4b4aab8593058867772bd5ad8730d2173234e2aa0a08f27c686e42a536eff",
+  "arrays": "/home/xinyuan/Work_host/SSM/results/analysis/cross_session_iteration/review/m1_small_none_cpu_saved_gpu_full_query_arrays.npz",
+  "arrays_sha256": "068c7ff6ec4ada24826f13f27b17dcbdadf23fb0b2546c62d437f78f5a41b2d6",
+  "acceptance": {
+    "score_delta_absolute_max": 0.001,
+    "saved_score_oracle_absolute_max": 2e-06,
+    "exact_cohort_and_truth_required": true,
+    "exact_source_state_required": true,
+    "finite_predictions_required": true,
+    "causal_prefix_required": true,
+    "passed": true
+  },
+  "plan": {
+    "task": "m1",
+    "data_root": "/mnt/data/work_host/SPINT/SPINT-main/data",
+    "authorized_splits": [
+      "held_in",
+      "minival"
+    ],
+    "source_held_in_sessions": [
+      "20120924",
+      "20120926",
+      "20120927"
+    ],
+    "cross_session_local_dev": {
+      "target_session": "20120928",
+      "surface": "held_in",
+      "role": "local_only"
+    },
+    "minival_targets": [
+      "20120924",
+      "20120926",
+      "20120927",
+      "20120928"
+    ],
+    "minival_interpretation": "held-in within-session temporal development when session IDs overlap held-in",
+    "held_in": [
+      {
+        "session": "20120924",
+        "path": "/mnt/data/work_host/SPINT/SPINT-main/data/000941/sub-MonkeyL-held-in-calib/sub-MonkeyL-held-in-calib_ses-20120924_behavior+ecephys.nwb",
+        "sha256": "63ee25782c62ff2275dcfbdcaa56552ec4c26fcde00f5a74e5be54785b5c25eb"
+      },
+      {
+        "session": "20120926",
+        "path": "/mnt/data/work_host/SPINT/SPINT-main/data/000941/sub-MonkeyL-held-in-calib/sub-MonkeyL-held-in-calib_ses-20120926_behavior+ecephys.nwb",
+        "sha256": "9c72512308194b93cc19b51733514eb9721152ffe4dd357ee93aabd4be5caa91"
+      },
+      {
+        "session": "20120927",
+        "path": "/mnt/data/work_host/SPINT/SPINT-main/data/000941/sub-MonkeyL-held-in-calib/sub-MonkeyL-held-in-calib_ses-20120927_behavior+ecephys.nwb",
+        "sha256": "2d2fdc9be5ccb7a47969894ff1da43a994da11bfff298353f94d489c4af37b3a"
+      },
+      {
+        "session": "20120928",
+        "path": "/mnt/data/work_host/SPINT/SPINT-main/data/000941/sub-MonkeyL-held-in-calib/sub-MonkeyL-held-in-calib_ses-20120928_behavior+ecephys.nwb",
+        "sha256": "96e7f078c6acb89b802b6241a36b9c9e2d04df82c180a63354fd3f7e74357254"
+      }
+    ],
+    "minival": [
+      {
+        "session": "20120924",
+        "path": "/mnt/data/work_host/SPINT/SPINT-main/data/000941/sub-MonkeyL-held-in-minival/sub-MonkeyL-held-in-minival_ses-20120924_behavior+ecephys.nwb",
+        "sha256": "9b3c8d80c699bf123be10d9fbff6799923ee3f00e4de34a18e899d4a66ab136a"
+      },
+      {
+        "session": "20120926",
+        "path": "/mnt/data/work_host/SPINT/SPINT-main/data/000941/sub-MonkeyL-held-in-minival/sub-MonkeyL-held-in-minival_ses-20120926_behavior+ecephys.nwb",
+        "sha256": "6fb0cdb4397a58d5a8187000194df83c10df54ef1f0b11f656b0ad96da365494"
+      },
+      {
+        "session": "20120927",
+        "path": "/mnt/data/work_host/SPINT/SPINT-main/data/000941/sub-MonkeyL-held-in-minival/sub-MonkeyL-held-in-minival_ses-20120927_behavior+ecephys.nwb",
+        "sha256": "037436d215f547228f36d9b8783c4d803169574cec61e3e315e4a3dee1799e88"
+      },
+      {
+        "session": "20120928",
+        "path": "/mnt/data/work_host/SPINT/SPINT-main/data/000941/sub-MonkeyL-held-in-minival/sub-MonkeyL-held-in-minival_ses-20120928_behavior+ecephys.nwb",
+        "sha256": "31b277b158f495f63f880049450c2cd7d8acdd6f0e954887058d6304333453e3"
+      }
+    ],
+    "held_out_accessed": false
+  }
+}

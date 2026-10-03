@@ -1,0 +1,8 @@
+{
+  "primary_cohort": "all-valid query trial bins; saved raw physical labels match live labels",
+  "r2": "each group uses its own per-output truth mean",
+  "contributions": "SSE and SST fractions use the full-query truth mean, so disjoint groups sum to one",
+  "query_selection": false,
+  "purpose": "diagnostic after checkpoint and LR selection",
+  "found_evaluations": 78
+}

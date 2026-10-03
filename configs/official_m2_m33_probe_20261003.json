@@ -1,0 +1,17 @@
+{
+  "schema": "official_m2_m33_probe_20261003_v1",
+  "purpose": "legal local M2 development check using exactly the first 33 public calibration trials",
+  "task": "m2",
+  "source_capacity": "wide",
+  "methods": [{"method": "none", "seed": 0, "lr": 0.0}, {"method": "lora", "seed": 0, "lr": 0.003}, {"method": "lora", "seed": 1, "lr": 0.003}, {"method": "lora", "seed": 2, "lr": 0.003}],
+  "context": 128,
+  "fit_batch": 32,
+  "steps": 2000,
+  "max_steps": 8000,
+  "eval_batch": 256,
+  "public_calibration_trials": 33,
+  "source": "stage_b/source/m2/wide/best.pt",
+  "lr_transfer": "authenticated Stage A M2 prefix selection only",
+  "query_used_for_checkpoint_or_lr_selection": false,
+  "candidate_scope": "local development only; no submission action"
+}

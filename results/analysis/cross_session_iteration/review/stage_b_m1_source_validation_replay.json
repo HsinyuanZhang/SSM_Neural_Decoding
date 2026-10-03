@@ -1,0 +1,35 @@
+{
+  "schema": "independent_stage_b_source_validation_replay_v1",
+  "results": [
+    {
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_b/official_20261003/source/m1/small",
+      "checkpoint_sha256": "fff5016a1c197c80908f2cc08d53286381341931cc2413932eefe63d8529532a",
+      "saved_best_step": 1400,
+      "saved_source_val_r2": 0.7854986190795898,
+      "runner_replay_r2": 0.7854986190795898,
+      "float64_physical_r2": 0.7854985872301605,
+      "runner_saved_absolute_delta": 0.0,
+      "oracle_saved_absolute_delta": 3.18494293161109e-08,
+      "sse": 1471.2930023029492,
+      "sst": 6859.129659354039,
+      "n_endpoints": 3072,
+      "truth_sha256": "1da310990f97eb86156fb7978dc5cd3ea603e8e4e3f0ed4e1d319d4aab36b3fb",
+      "prediction_sha256": "7c815a96251dfebd1bbf181a593d7dcc03403c6c285f9eb7e1d1177e65ee0dab"
+    },
+    {
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_b/official_20261003/source/m1/wide",
+      "checkpoint_sha256": "d900205f68989647f4040f9d7cf0518b67f1bd9ce0c1aa0bee797b95b5d270f9",
+      "saved_best_step": 900,
+      "saved_source_val_r2": 0.7889536023139954,
+      "runner_replay_r2": 0.7889534831047058,
+      "float64_physical_r2": 0.7889535149067013,
+      "runner_saved_absolute_delta": 1.1920928955078125e-07,
+      "oracle_saved_absolute_delta": 8.740729406930825e-08,
+      "sse": 1447.5952054058653,
+      "sst": 6859.129659354039,
+      "n_endpoints": 3072,
+      "truth_sha256": "1da310990f97eb86156fb7978dc5cd3ea603e8e4e3f0ed4e1d319d4aab36b3fb",
+      "prediction_sha256": "9a6faeeedbc6dd15f6d2c2486d1b98168f4fc45d832e3e420a136304cae80771"
+    }
+  ]
+}

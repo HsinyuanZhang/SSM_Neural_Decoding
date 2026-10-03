@@ -1,0 +1,49 @@
+{
+  "rows": [
+    {
+      "batch_size": 4,
+      "cpu_limit": 2.0,
+      "image_bytes": 451595015,
+      "image_id": "sha256:b8dc8af07ae9f62719ab6144e4ebfc1adb28cefc5f1c10b9d8cdbba730c0ea86",
+      "interpretation": "public minival interface validation; not hidden score evidence",
+      "max_r2_delta": 0.0,
+      "memory_limit_bytes": 4294967296,
+      "native_container_prediction_exact": true,
+      "network": "none",
+      "normalized_latency": 0.1232574987352338,
+      "payload_manifest_sha256": "3fad07ca34063f808f96cd4e4a63948714cd26a6df448c059b587ddf17e396f0",
+      "real_sdk": true,
+      "scope": "official_sdk_container",
+      "sdk_version": "1.0.2",
+      "sessions": 4,
+      "source_report_sha256": "b12aa03afe19c943cdca1089753126e03b2f104b24d3782e992e5111650077c3",
+      "status": "PASS",
+      "task": "m1",
+      "threads": 2,
+      "torch_version": "2.5.1+cpu"
+    },
+    {
+      "batch_size": 7,
+      "cpu_limit": 2.0,
+      "image_bytes": 576744004,
+      "image_id": "sha256:0978876e2beb8ab72f75c6cf83c466b066e1363c6b3b4a7285ec9525361921c8",
+      "interpretation": "public minival interface validation; not hidden score evidence",
+      "max_r2_delta": 0.0,
+      "memory_limit_bytes": 4294967296,
+      "native_container_prediction_exact": true,
+      "network": "none",
+      "normalized_latency": 0.6137583659027734,
+      "payload_manifest_sha256": "0c9bfd185c19893a69c47bf6504330402230d1cede75b90029350b9d54c61449",
+      "real_sdk": true,
+      "scope": "official_sdk_container",
+      "sdk_version": "1.0.2",
+      "sessions": 7,
+      "source_report_sha256": "be54b6a9e7c2ebd5334cc12ef3f142ff1f57fa4f7168e8996fdf4136856dcf74",
+      "status": "PASS",
+      "task": "m2",
+      "threads": 2,
+      "torch_version": "2.5.1+cpu"
+    }
+  ],
+  "schema": "ssm_public_cpu_sdk_validation_v1"
+}

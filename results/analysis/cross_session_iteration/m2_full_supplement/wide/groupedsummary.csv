@@ -1,0 +1,2 @@
+method,n,normalizer,policy,ridge_all_valid_r2_mean,ridge_all_valid_r2_population_sd,ridge_legacy_r2_mean,ridge_legacy_r2_population_sd,task,validation_split,zero_all_valid_r2_mean,zero_all_valid_r2_population_sd,zero_legacy_r2_mean,zero_legacy_r2_population_sd
+full,3,support,recording_causal_fixed_window,0.47322002481887165,0.0005313040249703415,-0.050395849403980376,0.0017650652520790292,m2,interleaved,0.46419524957556196,0.0010565235381888314,-0.06838053242061289,0.0044423297222333

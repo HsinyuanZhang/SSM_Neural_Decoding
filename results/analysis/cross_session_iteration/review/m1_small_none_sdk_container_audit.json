@@ -1,0 +1,330 @@
+{
+  "authorization_and_operations": {
+    "controller_preflight_not_run_reason": "submit_ssm_evalai_private.py calls bearer() before the --preflight branch, then identity_and_quota(), list_submissions(), and save(); therefore it is not an offline/read-only check.",
+    "controller_preflight_run": false,
+    "controller_static_evidence": {
+      "bearer_line": 417,
+      "network_calls_lines": [
+        433,
+        434
+      ],
+      "path": "/home/xinyuan/Work_host/SSM/scripts/submit_ssm_evalai_private.py",
+      "receipt_write_lines": [
+        441,
+        447
+      ]
+    },
+    "docker_operations": [
+      "docker image inspect",
+      "docker ps -a filter",
+      "docker inspect stopped preflight container",
+      "docker diff stopped preflight container",
+      "docker cp stopped-container /payload to stdout tar stream"
+    ],
+    "gpu_used": false,
+    "network_requested": false,
+    "new_container_started": false,
+    "repository_files_modified": [
+      "/home/xinyuan/Work_host/SSM/results/analysis/cross_session_iteration/review/m1_small_none_sdk_container_audit.json"
+    ]
+  },
+  "candidate_and_preflight_bound_digests": {
+    "all_bound_digests_match": true,
+    "candidate_bindings": {
+      "full_query_parity_report": {
+        "actual_sha256": "0f754e8553850d7d49b29cdd47a0ff2d6595e1f8d639e258dda676c17e71b236",
+        "expected_sha256": "0f754e8553850d7d49b29cdd47a0ff2d6595e1f8d639e258dda676c17e71b236",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/analysis/cross_session_iteration/review/m1_small_none_cpu_saved_gpu_full_query.json"
+      },
+      "payload_manifest": {
+        "actual_sha256": "3fad07ca34063f808f96cd4e4a63948714cd26a6df448c059b587ddf17e396f0",
+        "expected_sha256": "3fad07ca34063f808f96cd4e4a63948714cd26a6df448c059b587ddf17e396f0",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/official_payload/m1_small_none_m10_20261003/payload/payload_manifest.json"
+      },
+      "sdk_container_preflight": {
+        "actual_sha256": "b12aa03afe19c943cdca1089753126e03b2f104b24d3782e992e5111650077c3",
+        "expected_sha256": "b12aa03afe19c943cdca1089753126e03b2f104b24d3782e992e5111650077c3",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/official_evalai/20261003_m1_small_none_m10/sdk_container_preflight.json"
+      },
+      "selected_checkpoint": {
+        "actual_sha256": "c2d3071735170a9def1427b921d625e1cfe6f59c64b7793665ef0ee7794995db",
+        "expected_sha256": "c2d3071735170a9def1427b921d625e1cfe6f59c64b7793665ef0ee7794995db",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/official_m1_m10_probe/20261003_io_only/small/m1/none/seed0/lr0/best.pt"
+      }
+    },
+    "preflight_bindings": {
+      "artifact:container_out/gt.pkl": {
+        "actual_sha256": "06f1158d105e2ae11ffd5196ca2ff8704bff43033451ab66cdfad0750140906d",
+        "expected_sha256": "06f1158d105e2ae11ffd5196ca2ff8704bff43033451ab66cdfad0750140906d",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/official_evalai/20261003_m1_small_none_m10/container_out/gt.pkl"
+      },
+      "artifact:container_out/pred.pkl": {
+        "actual_sha256": "b7d2c8e2fc166f5cbf87cae8a247e0c04b57cbf4a4f074ac891d3dbd3e420a4d",
+        "expected_sha256": "b7d2c8e2fc166f5cbf87cae8a247e0c04b57cbf4a4f074ac891d3dbd3e420a4d",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/official_evalai/20261003_m1_small_none_m10/container_out/pred.pkl"
+      },
+      "artifact:native_out/gt.pkl": {
+        "actual_sha256": "3554fed7bee11833fb718d87165606a6c152e72866aafcfd0ca6a77534124a28",
+        "expected_sha256": "3554fed7bee11833fb718d87165606a6c152e72866aafcfd0ca6a77534124a28",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/official_evalai/20261003_m1_small_none_m10/native_out/gt.pkl"
+      },
+      "artifact:native_out/pred.pkl": {
+        "actual_sha256": "917d5d81773edb8116690cac88d56e756e3c7215cc28256968d1acf40996fc42",
+        "expected_sha256": "917d5d81773edb8116690cac88d56e756e3c7215cc28256968d1acf40996fc42",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/official_evalai/20261003_m1_small_none_m10/native_out/pred.pkl"
+      },
+      "audit_script": {
+        "actual_sha256": "3c340ed06c5e6463109d08273a9bde7548149451fdfb041cea85aeae0983acfe",
+        "expected_sha256": "3c340ed06c5e6463109d08273a9bde7548149451fdfb041cea85aeae0983acfe",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/official_evalai/audit_sdk_container.py"
+      },
+      "container_inspection": {
+        "actual_sha256": "0e55697b3bc4e5cbc61eecb51b1fc2e9dc08901ee0ce5bc5150796da7b2754e9",
+        "expected_sha256": "0e55697b3bc4e5cbc61eecb51b1fc2e9dc08901ee0ce5bc5150796da7b2754e9",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/official_evalai/20261003_m1_small_none_m10/container_inspection.json"
+      },
+      "image_contents": {
+        "actual_sha256": "114bdbf969b32014de12bcbda2625f45c1c34dc50e29ab32e0d93d6b9b142f48",
+        "expected_sha256": "114bdbf969b32014de12bcbda2625f45c1c34dc50e29ab32e0d93d6b9b142f48",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/official_evalai/20261003_m1_small_none_m10/image_contents.json"
+      },
+      "payload_manifest": {
+        "actual_sha256": "3fad07ca34063f808f96cd4e4a63948714cd26a6df448c059b587ddf17e396f0",
+        "expected_sha256": "3fad07ca34063f808f96cd4e4a63948714cd26a6df448c059b587ddf17e396f0",
+        "match": true,
+        "path": "/home/xinyuan/Work_host/SSM/results/official_payload/m1_small_none_m10_20261003/payload/payload_manifest.json"
+      }
+    }
+  },
+  "candidate_source_and_parity": {
+    "candidate_checkpoint": {
+      "actual_sha256": "c2d3071735170a9def1427b921d625e1cfe6f59c64b7793665ef0ee7794995db",
+      "expected_sha256": "c2d3071735170a9def1427b921d625e1cfe6f59c64b7793665ef0ee7794995db",
+      "match": true,
+      "path": "/home/xinyuan/Work_host/SSM/results/official_m1_m10_probe/20261003_io_only/small/m1/none/seed0/lr0/best.pt"
+    },
+    "none_checkpoint_normalizer_exact_to_stage_b_source": true,
+    "none_checkpoint_state_exact_to_stage_b_source": true,
+    "parity_all_values_finite": true,
+    "parity_cohort_exact_to_saved_gpu": true,
+    "parity_full_query_valid_bins": 50591,
+    "parity_query_bounds": 380,
+    "parity_scope": "full_query",
+    "parity_score_delta": 4.6886979498950154e-06,
+    "parity_status": "PASS",
+    "parity_truth_exact_to_saved_gpu": true,
+    "public_bank_status": "GO",
+    "stage_b_source_checkpoint_sha256": "67bdc3cd99b98174d2c559fd1c5fa6fdd2655bbee2d810719c3e664d847998c1"
+  },
+  "container_execution": {
+    "bound_container_inspection_receipt_matches_current": true,
+    "container_id": "d367ae649f93",
+    "container_image_id": "sha256:b8dc8af07ae9f62719ab6144e4ebfc1adb28cefc5f1c10b9d8cdbba730c0ea86",
+    "host_config": {
+      "cpu_limit": 2.0,
+      "memory_bytes": 4294967296,
+      "memory_gib": 4.0,
+      "nano_cpus": 2000000000,
+      "network_mode": "none"
+    },
+    "mounts": [
+      {
+        "destination": "/dataset/evaluation_data",
+        "rw": false,
+        "source": "/mnt/data/work_host/SPINT/SPINT-main/data",
+        "type": "bind"
+      },
+      {
+        "destination": "/tmp/out",
+        "rw": true,
+        "source": "/home/xinyuan/Work_host/SSM/results/official_evalai/20261003_m1_small_none_m10/container_out",
+        "type": "bind"
+      }
+    ],
+    "runtime_constraints_exact": true,
+    "state": {
+      "error": "",
+      "exit_code": 0,
+      "finished_at": "2026-10-03T13:46:10.751676684Z",
+      "oom_killed": false,
+      "started_at": "2026-10-03T13:45:58.868065443Z",
+      "status": "exited"
+    }
+  },
+  "current_byte_hashes": {
+    "audit_sdk_container_py": "3c340ed06c5e6463109d08273a9bde7548149451fdfb041cea85aeae0983acfe",
+    "candidate_audit_json": "5ff246673a8e88827b1b1f7d414cef7474a327b3349037a6a58030d5e72237e4",
+    "container_inspection_json": "0e55697b3bc4e5cbc61eecb51b1fc2e9dc08901ee0ce5bc5150796da7b2754e9",
+    "container_log": "db3059cf709b6d347613d3ca58a1ff8e504a93d1386905f17062d261fda2e9d7",
+    "image_contents_json": "114bdbf969b32014de12bcbda2625f45c1c34dc50e29ab32e0d93d6b9b142f48",
+    "native_log": "c1ac1541b23bd3b9fd28f2eb7de009f032bac2200e86207db917f33ba7f8d7e6",
+    "payload_manifest_json": "3fad07ca34063f808f96cd4e4a63948714cd26a6df448c059b587ddf17e396f0",
+    "public_bank_report": "78bba5fb59b4e491d25719f31b564811c5bc3fae8bd3b1a471e09c961a0d1737",
+    "sdk_container_preflight_json": "b12aa03afe19c943cdca1089753126e03b2f104b24d3782e992e5111650077c3"
+  },
+  "image_and_payload": {
+    "actual_image_id": "sha256:b8dc8af07ae9f62719ab6144e4ebfc1adb28cefc5f1c10b9d8cdbba730c0ea86",
+    "default_command": [
+      "--evaluation",
+      "remote",
+      "--model-path",
+      "/payload",
+      "--split",
+      "m1",
+      "--phase",
+      "test",
+      "--batch-size",
+      "4"
+    ],
+    "expected_image_id": "sha256:b8dc8af07ae9f62719ab6144e4ebfc1adb28cefc5f1c10b9d8cdbba730c0ea86",
+    "falcon_challenge_version_from_image_probe": "1.0.2",
+    "image_id_match": true,
+    "image_payload_tags": [
+      "20120924",
+      "20120926",
+      "20120927",
+      "20120928",
+      "20121004",
+      "20121017",
+      "20121024"
+    ],
+    "image_probe_equals_host_payload": true,
+    "image_size_bytes": 451595015,
+    "image_tag": "ssm-falcon-m1:20261003-small-none-m10",
+    "manifest_equals_host_payload": true,
+    "payload_file_count_from_host": 19,
+    "payload_file_count_from_image_probe": 19,
+    "payload_manifest_file_count_including_manifest": 19,
+    "preflight_script_image_probe_evidence": {
+      "description": "The recorded preflight resolves the image ID, runs an isolated image payload/package probe, compares the full hash map to host payload, checks Falcon SDK 1.0.2, and binds image_contents SHA.",
+      "lines": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        34,
+        35
+      ],
+      "path": "/home/xinyuan/Work_host/SSM/results/official_evalai/audit_sdk_container.py"
+    },
+    "stopped_container_payload_readback": {
+      "container_id": "d367ae649f93",
+      "docker_diff": [
+        "C /tmp",
+        "A /tmp/out",
+        "A /dataset",
+        "A /dataset/evaluation_data"
+      ],
+      "payload_diff_entries": [],
+      "payload_mount_present": false,
+      "payload_mounts": [],
+      "tar_sha_equals_image_probe": true,
+      "tar_sha_file_count": 19
+    }
+  },
+  "limitations": [
+    "The SDK/container receipt explicitly scopes its direct execution check to public held-in minival; it does not claim hidden-test evidence.",
+    "Full-query coverage is established by the separately bound CPU/saved-GPU parity report, not by the minival container run."
+  ],
+  "logs": {
+    "container_log_path": "/home/xinyuan/Work_host/SSM/results/official_evalai/20261003_m1_small_none_m10/container.log",
+    "native_log_path": "/home/xinyuan/Work_host/SSM/results/official_evalai/20261003_m1_small_none_m10/native.log",
+    "no_private_response_or_hidden_failure_indicators": true,
+    "scan_terms": [
+      "private response",
+      "hidden failure",
+      "traceback",
+      "exception",
+      "error",
+      "oom",
+      "out of memory",
+      "network"
+    ],
+    "term_found": {
+      "container.log": {
+        "error": false,
+        "exception": false,
+        "hidden failure": false,
+        "network": false,
+        "oom": false,
+        "out of memory": false,
+        "private response": false,
+        "traceback": false
+      },
+      "native.log": {
+        "error": false,
+        "exception": false,
+        "hidden failure": false,
+        "network": false,
+        "oom": false,
+        "out of memory": false,
+        "private response": false,
+        "traceback": false
+      }
+    }
+  },
+  "native_container_minival": {
+    "all_sessions_prediction_truth_mask_elementwise_exact": true,
+    "declared_phase": "minival",
+    "expected_session_count": 4,
+    "preflight_interpretation": "interface verification only; public held-in minival is not hidden-test evidence",
+    "preflight_max_absolute_score_delta": 0.0,
+    "session_count": 4,
+    "sessions": [
+      {
+        "all_bins": 1039,
+        "mask_elementwise_exact": true,
+        "max_absolute_prediction_delta": 0.0,
+        "prediction_elementwise_exact": true,
+        "tag": "20120924",
+        "truth_elementwise_exact": true,
+        "valid_bins": 252
+      },
+      {
+        "all_bins": 1039,
+        "mask_elementwise_exact": true,
+        "max_absolute_prediction_delta": 0.0,
+        "prediction_elementwise_exact": true,
+        "tag": "20120926",
+        "truth_elementwise_exact": true,
+        "valid_bins": 256
+      },
+      {
+        "all_bins": 1039,
+        "mask_elementwise_exact": true,
+        "max_absolute_prediction_delta": 0.0,
+        "prediction_elementwise_exact": true,
+        "tag": "20120927",
+        "truth_elementwise_exact": true,
+        "valid_bins": 255
+      },
+      {
+        "all_bins": 1039,
+        "mask_elementwise_exact": true,
+        "max_absolute_prediction_delta": 0.0,
+        "prediction_elementwise_exact": true,
+        "tag": "20120928",
+        "truth_elementwise_exact": true,
+        "valid_bins": 262
+      }
+    ]
+  },
+  "reviewed_utc": "2026-10-03T13:57:54.552069+00:00",
+  "schema": "ssm_m1_sdk_container_independent_audit_v1",
+  "scope": "read_only_completed_sdk_container_preflight",
+  "status": "GO",
+  "task": "m1"
+}

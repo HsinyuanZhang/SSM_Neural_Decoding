@@ -1,0 +1,472 @@
+{
+  "schema": "independent_stage_a_prefix_selection_audit_v1",
+  "query_metrics_present_during_audit": 0,
+  "selection_summary": {
+    "selected_lr": {
+      "m1": {
+        "none": 0.0,
+        "io": 0.0003,
+        "lora": 0.0003,
+        "affine": 0.003,
+        "affine_lora": 0.0003,
+        "offset_rotated": 0.0003,
+        "offset_original": 0.001,
+        "full": 0.0001
+      },
+      "m2": {
+        "none": 0.0,
+        "io": 0.0003,
+        "lora": 0.003,
+        "affine": 0.0003,
+        "affine_lora": 0.001,
+        "offset_rotated": 0.003,
+        "offset_original": 0.001,
+        "full": 0.0001
+      }
+    },
+    "selected_fit_count": 44
+  },
+  "selected_fits": [
+    {
+      "task": "m1",
+      "method": "none",
+      "seed": 0,
+      "lr": 0.0,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/none/seed0/lr0",
+      "best_prefix_val_r2": 0.6877590417861938,
+      "best_step": 0,
+      "best_checkpoint_sha256": "accc3c69d774cc58139d55544d0b55dc415f2b68bc2d2b8c918c5ad4d373bee0"
+    },
+    {
+      "task": "m1",
+      "method": "io",
+      "seed": 0,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/io/seed0/lr0p0003",
+      "best_prefix_val_r2": 0.7572222352027893,
+      "best_step": 100,
+      "best_checkpoint_sha256": "294924b31aa5fed66b1f93f81bb6fc2f0856b01ef7f736f5e295a96aecbc8335"
+    },
+    {
+      "task": "m1",
+      "method": "io",
+      "seed": 1,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/io/seed1/lr0p0003",
+      "best_prefix_val_r2": 0.7585892677307129,
+      "best_step": 100,
+      "best_checkpoint_sha256": "9ce26b1a208bc30718606eedabb326a20b8fcdc763cd6327a24a1995dc7a58d5"
+    },
+    {
+      "task": "m1",
+      "method": "io",
+      "seed": 2,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/io/seed2/lr0p0003",
+      "best_prefix_val_r2": 0.7574357986450195,
+      "best_step": 100,
+      "best_checkpoint_sha256": "a6c1d8c1ab8e71c8ffa0b7c08b551baf1db15d374e5ebe2f46fcc311872cd5d3"
+    },
+    {
+      "task": "m1",
+      "method": "lora",
+      "seed": 0,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/lora/seed0/lr0p0003",
+      "best_prefix_val_r2": 0.7635124921798706,
+      "best_step": 200,
+      "best_checkpoint_sha256": "6d17f5807f334a556b70c2fdfe01f8a9b0b3516a4fcc1871c82906f7d9a20356"
+    },
+    {
+      "task": "m1",
+      "method": "lora",
+      "seed": 1,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/lora/seed1/lr0p0003",
+      "best_prefix_val_r2": 0.767484724521637,
+      "best_step": 200,
+      "best_checkpoint_sha256": "91bb87d3fee9f0e3518bd8436a99d759ec39ef0f1d56682a34f6429f3f5bc62e"
+    },
+    {
+      "task": "m1",
+      "method": "lora",
+      "seed": 2,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/lora/seed2/lr0p0003",
+      "best_prefix_val_r2": 0.7678095698356628,
+      "best_step": 200,
+      "best_checkpoint_sha256": "fe8a7aa85a141d4e85149629f79b4f75c498da06e9954cc5ed7b11b786a668de"
+    },
+    {
+      "task": "m1",
+      "method": "affine",
+      "seed": 0,
+      "lr": 0.003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/affine/seed0/lr0p003",
+      "best_prefix_val_r2": 0.7534673810005188,
+      "best_step": 400,
+      "best_checkpoint_sha256": "0549db477d37c1bf3b32a172583e355a11240a6ce6b6a15c0d1ca1518783b91b"
+    },
+    {
+      "task": "m1",
+      "method": "affine",
+      "seed": 1,
+      "lr": 0.003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/affine/seed1/lr0p003",
+      "best_prefix_val_r2": 0.7525444030761719,
+      "best_step": 600,
+      "best_checkpoint_sha256": "ea55c325b2c93044910a60cbf3a73e6c36527d9f89bc532955f35fc582237f35"
+    },
+    {
+      "task": "m1",
+      "method": "affine",
+      "seed": 2,
+      "lr": 0.003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/affine/seed2/lr0p003",
+      "best_prefix_val_r2": 0.7527002096176147,
+      "best_step": 500,
+      "best_checkpoint_sha256": "9c7260ee38a34b7120e67d0165631e9b1ab3820669605bd483d258aa4a0b8997"
+    },
+    {
+      "task": "m1",
+      "method": "affine_lora",
+      "seed": 0,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/affine_lora/seed0/lr0p0003",
+      "best_prefix_val_r2": 0.7640295028686523,
+      "best_step": 200,
+      "best_checkpoint_sha256": "e9b956a0e142d2f973e9e321e7ab02ff2d87708839893f0158f3db061cd9f229"
+    },
+    {
+      "task": "m1",
+      "method": "affine_lora",
+      "seed": 1,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/affine_lora/seed1/lr0p0003",
+      "best_prefix_val_r2": 0.7682720422744751,
+      "best_step": 200,
+      "best_checkpoint_sha256": "f237abe3cac55356b627c947fb3009be0beb866827e82454e3b5e2c5f48e0d5a"
+    },
+    {
+      "task": "m1",
+      "method": "affine_lora",
+      "seed": 2,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/affine_lora/seed2/lr0p0003",
+      "best_prefix_val_r2": 0.7679705619812012,
+      "best_step": 200,
+      "best_checkpoint_sha256": "54d1e873f98843c780ddabff7babd31a56ecd0a34f7232bcc919d8c7596d2096"
+    },
+    {
+      "task": "m1",
+      "method": "offset_rotated",
+      "seed": 0,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/offset_rotated/seed0/lr0p0003",
+      "best_prefix_val_r2": 0.7513875365257263,
+      "best_step": 900,
+      "best_checkpoint_sha256": "abf697c2b58dc5d260cde479b97d6c6f47109db7bdaab585ab57e8c5674e9081"
+    },
+    {
+      "task": "m1",
+      "method": "offset_rotated",
+      "seed": 1,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/offset_rotated/seed1/lr0p0003",
+      "best_prefix_val_r2": 0.7537760138511658,
+      "best_step": 800,
+      "best_checkpoint_sha256": "0d652006325152aff417a5b96e42c5cf1b5a340aee3142dfd9b8048bcf0b226b"
+    },
+    {
+      "task": "m1",
+      "method": "offset_rotated",
+      "seed": 2,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/offset_rotated/seed2/lr0p0003",
+      "best_prefix_val_r2": 0.7547372579574585,
+      "best_step": 800,
+      "best_checkpoint_sha256": "fb3572e6961682bb9287512ca6f218ee9cb9513301c99ede41b624874b9be0ad"
+    },
+    {
+      "task": "m1",
+      "method": "offset_original",
+      "seed": 0,
+      "lr": 0.001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/offset_original/seed0/lr0p001",
+      "best_prefix_val_r2": 0.7557954788208008,
+      "best_step": 300,
+      "best_checkpoint_sha256": "7c078ec757f2c9d6f5d8ac72a06032ff9f5cca36815d93176ec8bc5a36852d50"
+    },
+    {
+      "task": "m1",
+      "method": "offset_original",
+      "seed": 1,
+      "lr": 0.001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/offset_original/seed1/lr0p001",
+      "best_prefix_val_r2": 0.7591326236724854,
+      "best_step": 200,
+      "best_checkpoint_sha256": "3248e52f4873b5e345658be7a489e24915a912745e368dca4cdd98bd15bf07c6"
+    },
+    {
+      "task": "m1",
+      "method": "offset_original",
+      "seed": 2,
+      "lr": 0.001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/offset_original/seed2/lr0p001",
+      "best_prefix_val_r2": 0.75928795337677,
+      "best_step": 200,
+      "best_checkpoint_sha256": "db0d2dc474d8a33f9e623b85e9e8ff95662b56b763d45b89d82ca071f6acc5fb"
+    },
+    {
+      "task": "m1",
+      "method": "full",
+      "seed": 0,
+      "lr": 0.0001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/full/seed0/lr0p0001",
+      "best_prefix_val_r2": 0.7604715824127197,
+      "best_step": 400,
+      "best_checkpoint_sha256": "82f5f1ddb4f5a87202dfbe1ec0e6414b290d6c9d377c06369be0931639eaad16"
+    },
+    {
+      "task": "m1",
+      "method": "full",
+      "seed": 1,
+      "lr": 0.0001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/full/seed1/lr0p0001",
+      "best_prefix_val_r2": 0.7610963582992554,
+      "best_step": 400,
+      "best_checkpoint_sha256": "4bd0f9eafd615c4eb3693077b71c6c150eb2d201b0219cf2bf5b565af2c88a8d"
+    },
+    {
+      "task": "m1",
+      "method": "full",
+      "seed": 2,
+      "lr": 0.0001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m1/full/seed2/lr0p0001",
+      "best_prefix_val_r2": 0.759342610836029,
+      "best_step": 400,
+      "best_checkpoint_sha256": "ec3c5d050c9e2ef8954acc053e6e8039b122e7d721a24532e3088d9f2a158b7f"
+    },
+    {
+      "task": "m2",
+      "method": "none",
+      "seed": 0,
+      "lr": 0.0,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/none/seed0/lr0",
+      "best_prefix_val_r2": 0.0469287633895874,
+      "best_step": 0,
+      "best_checkpoint_sha256": "f13f0bf3963c35d80c378935766ad82f8f1118bd62adcc47550c914d8a05abac"
+    },
+    {
+      "task": "m2",
+      "method": "io",
+      "seed": 0,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/io/seed0/lr0p0003",
+      "best_prefix_val_r2": 0.26579493284225464,
+      "best_step": 100,
+      "best_checkpoint_sha256": "2c6b8dec9b4766dd49f247e7c508f8f0c7942a359c1eb520456b57783c090f0d"
+    },
+    {
+      "task": "m2",
+      "method": "io",
+      "seed": 1,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/io/seed1/lr0p0003",
+      "best_prefix_val_r2": 0.260597288608551,
+      "best_step": 100,
+      "best_checkpoint_sha256": "2b2d5dbf5a15aa827a06b9990d67f54e8201baa2e2279865778b5f2ffd196132"
+    },
+    {
+      "task": "m2",
+      "method": "io",
+      "seed": 2,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/io/seed2/lr0p0003",
+      "best_prefix_val_r2": 0.26610589027404785,
+      "best_step": 100,
+      "best_checkpoint_sha256": "134ddcbc55535b55ab43cb369ba80125db02615850bebe3fa090dd36d02d0407"
+    },
+    {
+      "task": "m2",
+      "method": "lora",
+      "seed": 0,
+      "lr": 0.003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/lora/seed0/lr0p003",
+      "best_prefix_val_r2": 0.387409508228302,
+      "best_step": 700,
+      "best_checkpoint_sha256": "236bb97581ae3ffd4c87ec7481161c276f3a461a46be49986dad627a6a2d7839"
+    },
+    {
+      "task": "m2",
+      "method": "lora",
+      "seed": 1,
+      "lr": 0.003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/lora/seed1/lr0p003",
+      "best_prefix_val_r2": 0.2666260004043579,
+      "best_step": 200,
+      "best_checkpoint_sha256": "9c6baba4a178285250bbb532833864e3287db534f1d1f8cc58875eececf3897c"
+    },
+    {
+      "task": "m2",
+      "method": "lora",
+      "seed": 2,
+      "lr": 0.003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/lora/seed2/lr0p003",
+      "best_prefix_val_r2": 0.33130836486816406,
+      "best_step": 700,
+      "best_checkpoint_sha256": "4ca8bbc5fe8f243dde43c08a375a1dbe50154f33a51392578937737f7f1a3bcf"
+    },
+    {
+      "task": "m2",
+      "method": "affine",
+      "seed": 0,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/affine/seed0/lr0p0003",
+      "best_prefix_val_r2": 0.2332397699356079,
+      "best_step": 700,
+      "best_checkpoint_sha256": "c7b886c0a8df27672b713465f95c0a18d6404242553db9ba3a2ccc21bf4424c9"
+    },
+    {
+      "task": "m2",
+      "method": "affine",
+      "seed": 1,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/affine/seed1/lr0p0003",
+      "best_prefix_val_r2": 0.23148614168167114,
+      "best_step": 800,
+      "best_checkpoint_sha256": "c5c6579f3bdf492f81af20d4d821df3b14108d2a47cce8b419dce061d50697f2"
+    },
+    {
+      "task": "m2",
+      "method": "affine",
+      "seed": 2,
+      "lr": 0.0003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/affine/seed2/lr0p0003",
+      "best_prefix_val_r2": 0.2222912311553955,
+      "best_step": 800,
+      "best_checkpoint_sha256": "44478fe7b0b093c047a4d6f071bad5467e46af2631d1a233ef97bf6475a99024"
+    },
+    {
+      "task": "m2",
+      "method": "affine_lora",
+      "seed": 0,
+      "lr": 0.001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/affine_lora/seed0/lr0p001",
+      "best_prefix_val_r2": 0.33960044384002686,
+      "best_step": 2100,
+      "best_checkpoint_sha256": "75c95b307a3f88487bffd38bdf9324a4910b119598bad37358dd2b510de4645f"
+    },
+    {
+      "task": "m2",
+      "method": "affine_lora",
+      "seed": 1,
+      "lr": 0.001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/affine_lora/seed1/lr0p001",
+      "best_prefix_val_r2": 0.32307642698287964,
+      "best_step": 700,
+      "best_checkpoint_sha256": "a8c7fadd5b56460174da9f5fafbed11544ca7f41a088f9f2f2281bdcad02718e"
+    },
+    {
+      "task": "m2",
+      "method": "affine_lora",
+      "seed": 2,
+      "lr": 0.001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/affine_lora/seed2/lr0p001",
+      "best_prefix_val_r2": 0.3876604437828064,
+      "best_step": 3900,
+      "best_checkpoint_sha256": "4aa5f1bca20a4243814410a6c54c3c3b346959f152fb279afa7945e34396fa78"
+    },
+    {
+      "task": "m2",
+      "method": "offset_rotated",
+      "seed": 0,
+      "lr": 0.003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/offset_rotated/seed0/lr0p003",
+      "best_prefix_val_r2": 0.3817983865737915,
+      "best_step": 3800,
+      "best_checkpoint_sha256": "df6e72c411242c15795df3562b6aa0d898040f48da20e49a04a9ab66f196139e"
+    },
+    {
+      "task": "m2",
+      "method": "offset_rotated",
+      "seed": 1,
+      "lr": 0.003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/offset_rotated/seed1/lr0p003",
+      "best_prefix_val_r2": 0.32912397384643555,
+      "best_step": 2500,
+      "best_checkpoint_sha256": "16141f93e8b464018076c332ae5e21c7ce03747cca3b1cc4cbcd759e8f85763b"
+    },
+    {
+      "task": "m2",
+      "method": "offset_rotated",
+      "seed": 2,
+      "lr": 0.003,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/offset_rotated/seed2/lr0p003",
+      "best_prefix_val_r2": 0.36491715908050537,
+      "best_step": 3700,
+      "best_checkpoint_sha256": "ba80ca09c8410fa18e179b7df63002ac1effa46327bf74f6936f7738e57472ad"
+    },
+    {
+      "task": "m2",
+      "method": "offset_original",
+      "seed": 0,
+      "lr": 0.001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/offset_original/seed0/lr0p001",
+      "best_prefix_val_r2": 0.37420177459716797,
+      "best_step": 5500,
+      "best_checkpoint_sha256": "db391ff1b9393405826235bd6fd2f4ec4c2fc5091d31cba50f6cc79ab41c96ce"
+    },
+    {
+      "task": "m2",
+      "method": "offset_original",
+      "seed": 1,
+      "lr": 0.001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/offset_original/seed1/lr0p001",
+      "best_prefix_val_r2": 0.34854161739349365,
+      "best_step": 2300,
+      "best_checkpoint_sha256": "81f23038a63ac750fdd2a6988f73b0c95142554f168b198c01637e7fb9dbeb36"
+    },
+    {
+      "task": "m2",
+      "method": "offset_original",
+      "seed": 2,
+      "lr": 0.001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/offset_original/seed2/lr0p001",
+      "best_prefix_val_r2": 0.40049004554748535,
+      "best_step": 3800,
+      "best_checkpoint_sha256": "12fb3bd140677bdf3567e95d5fe44bd3490fdbc9c9ba2dd6d7ccb76f1119c651"
+    },
+    {
+      "task": "m2",
+      "method": "full",
+      "seed": 0,
+      "lr": 0.0001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/full/seed0/lr0p0001",
+      "best_prefix_val_r2": 0.34075844287872314,
+      "best_step": 1400,
+      "best_checkpoint_sha256": "19b2a798d08f2e1ae3b689b3cb46adc4e7465c72178336bbf1f7afecb756c0a3"
+    },
+    {
+      "task": "m2",
+      "method": "full",
+      "seed": 1,
+      "lr": 0.0001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/full/seed1/lr0p0001",
+      "best_prefix_val_r2": 0.3401685357093811,
+      "best_step": 1200,
+      "best_checkpoint_sha256": "542e8ceba8bd56223c6e5d87895ca3797eee4501d96a1d942b26c541df7436a5"
+    },
+    {
+      "task": "m2",
+      "method": "full",
+      "seed": 2,
+      "lr": 0.0001,
+      "path": "/home/xinyuan/Work_host/SSM/results/cross_session_iteration_a/official_20261003/m2/full/seed2/lr0p0001",
+      "best_prefix_val_r2": 0.34519243240356445,
+      "best_step": 1300,
+      "best_checkpoint_sha256": "35c5cd03b95ea3ebc175d086a79fd6fe485149e78b34f9abc1b1c3d4825ca2e7"
+    }
+  ],
+  "errors": []
+}

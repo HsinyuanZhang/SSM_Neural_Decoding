@@ -1,0 +1,51 @@
+{
+  "schema": "independent_packaged_cpu_smoke_v1",
+  "status": "passed",
+  "implementation_sha256": {
+    "audit_packaged_cpu_smoke.py": "bf92e2ad42acc41fe8baa20444ba60b0994ec663e30239cb17324c71ed02cb7d",
+    "falcon_decoder.py": "b58502ac0baabb7e8adb6070b24c7dd9e7031a567f65724e99ecfdccc6460ce3",
+    "mamba3_cpu.py": "6028763e79789d5fcca4943c53f3e420cec98bedf4a2575651a47561aacb1dbd"
+  },
+  "torch_threads": 1,
+  "tasks": [
+    {
+      "task": "m1",
+      "capacity": "small",
+      "source_checkpoint_sha256": "67bdc3cd99b98174d2c559fd1c5fa6fdd2655bbee2d810719c3e664d847998c1",
+      "source_normalizer_sha256": "47b8adcfe4ff7575171d909ada80362c79fdbe0f4ccc80cf2ce83ee3e37a4476",
+      "public_model_count": 7,
+      "batch_size": 4,
+      "payload_file_count": 18,
+      "cold_predict_ms": 18.918367102742195,
+      "warm_predict_ms_mean": 8.981474209576845,
+      "warm_predict_ms_max": 9.038097225129604,
+      "first_output_max_abs": 0.8744263648986816,
+      "observe_advanced_history": true,
+      "finite_output": true,
+      "output_shape": [
+        4,
+        16
+      ]
+    },
+    {
+      "task": "m2",
+      "capacity": "small",
+      "source_checkpoint_sha256": "0ff9b8f0c56c635f80a78b36c46261ff93e597186331172efe92d4db08aabe04",
+      "source_normalizer_sha256": "888418418b2ebf40f6754715eb95a7ee65ecce33db6b8a05def31a531de0c6b5",
+      "public_model_count": 13,
+      "batch_size": 7,
+      "payload_file_count": 30,
+      "cold_predict_ms": 26.22676407918334,
+      "warm_predict_ms_mean": 16.009215420732897,
+      "warm_predict_ms_max": 16.08371688053012,
+      "first_output_max_abs": 0.0005416144849732518,
+      "observe_advanced_history": true,
+      "finite_output": true,
+      "output_shape": [
+        7,
+        2
+      ]
+    }
+  ],
+  "interpretation": "This smoke verifies payload closure, roster routing, task geometry, batch caps, finite CPU execution, and observe history. Timing is diagnostic."
+}

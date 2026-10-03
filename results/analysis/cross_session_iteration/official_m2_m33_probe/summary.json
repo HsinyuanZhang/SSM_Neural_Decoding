@@ -1,0 +1,111 @@
+{
+  "all_fits_completed_before_query_decode": true,
+  "lora_mean": 0.48214099278748385,
+  "lora_population_sd": 0.020232206770766887,
+  "lora_seed_gains_vs_none": [
+    0.07450795434951663,
+    0.05480724362149425,
+    0.025275479232045206
+  ],
+  "query_used_for_checkpoint_or_lr_selection": false,
+  "raw_truth_sha256": "650583336ab1b53305cd1cfb6a72e3d67bcc08d8d9c67be8ef2615f77c1f7651",
+  "rows": [
+    {
+      "allvalid_count": 14115,
+      "best_step": 0,
+      "cohort_indices_sha256": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+      "fit": "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/fits/none_seed0",
+      "fold_r2_abs_delta": 1.0728836059570312e-06,
+      "method": "none",
+      "model_sha256": "a842c5a9a51d8e40ec9857ce92d9886ce6f1137122c26b2abdb082e87f733848",
+      "normalizer_sha256": "d41410f9cb2cc3c50437091e410c3cfc47c6fbd05f858532dee4027aafb6d7e4",
+      "prediction_sha256": "e94cf5ea14f0e5f90fbe0ac5a595c05eb75f9d2721a5ed65fa085b7211c4ad9b",
+      "r2": 0.43061076705313184,
+      "receipt_sha256": "436a70c710e2dacfcc52f2aa4f3c6f4c190b30934470beb09dc3ecb8f124eb59",
+      "runtime_identity": {
+        "cuda": "11.8",
+        "official_actual": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "official_expected": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.5.1.post303",
+        "triton": "3.5.0"
+      },
+      "score_npz_sha256": "b3e52005af969a26080f0ec52d9166ac23ecff2e7e17cebaa9c111b651638976",
+      "seed": 0
+    },
+    {
+      "allvalid_count": 14115,
+      "best_step": 300,
+      "cohort_indices_sha256": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+      "fit": "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/fits/lora_seed0",
+      "fold_r2_abs_delta": 8.970499038696289e-05,
+      "method": "lora",
+      "model_sha256": "734d5b37d40632c3d14b17011b28520f260bac3c737fd15c9d2932065d15e97d",
+      "normalizer_sha256": "d41410f9cb2cc3c50437091e410c3cfc47c6fbd05f858532dee4027aafb6d7e4",
+      "prediction_sha256": "c7b7c8e47ec2d045d8fc560aa57ed07c44084bd1e820fcd4e4852d798023250c",
+      "r2": 0.5051187214026485,
+      "receipt_sha256": "abaff622ec2c6c187696962306d865a5deaf6d5b96b3f0c700ae2cd04c8e76f4",
+      "runtime_identity": {
+        "cuda": "11.8",
+        "official_actual": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "official_expected": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.5.1.post303",
+        "triton": "3.5.0"
+      },
+      "score_npz_sha256": "109ae7776bc40fb11a4197764d27f3300c07af804c5cb8ad59c3dfa295cbc594",
+      "seed": 0
+    },
+    {
+      "allvalid_count": 14115,
+      "best_step": 200,
+      "cohort_indices_sha256": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+      "fit": "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/fits/lora_seed1",
+      "fold_r2_abs_delta": 9.506940841674805e-05,
+      "method": "lora",
+      "model_sha256": "e74fcf8dd0d6e2b7379dae583abdb1e3b836d1011b7a2f2d380a500af10ec1c8",
+      "normalizer_sha256": "d41410f9cb2cc3c50437091e410c3cfc47c6fbd05f858532dee4027aafb6d7e4",
+      "prediction_sha256": "d9089433b81294cd961a3c23ec9d830a144b2442f54d2bd50241c4f9702a6dd6",
+      "r2": 0.4854180106746261,
+      "receipt_sha256": "573072a14c6ae0a83d5d0492aab3a608fd699d11425411cb126046d1e5736bd4",
+      "runtime_identity": {
+        "cuda": "11.8",
+        "official_actual": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "official_expected": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.5.1.post303",
+        "triton": "3.5.0"
+      },
+      "score_npz_sha256": "18b7907187213537bf98d8548e8e3676871551a60006864a5febd3ee2f19f4ed",
+      "seed": 1
+    },
+    {
+      "allvalid_count": 14115,
+      "best_step": 800,
+      "cohort_indices_sha256": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+      "fit": "/home/xinyuan/Work_host/SSM/results/official_m2_m33_probe/20261003/fits/lora_seed2",
+      "fold_r2_abs_delta": 6.181001663208008e-05,
+      "method": "lora",
+      "model_sha256": "62e16b4cca21943ade127ba53af8c5eb4d651f6ff4827630409e3d76cc051281",
+      "normalizer_sha256": "d41410f9cb2cc3c50437091e410c3cfc47c6fbd05f858532dee4027aafb6d7e4",
+      "prediction_sha256": "bc4acb700bec4d792781ff040462c8f4b358247a59ebbf4ab02a59ce19ceac71",
+      "r2": 0.45588624628517704,
+      "receipt_sha256": "8b5c81eba8eeddcb6eec00afd28a94073be9ecbdd18403656c12f6db90729af1",
+      "runtime_identity": {
+        "cuda": "11.8",
+        "official_actual": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "official_expected": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.5.1.post303",
+        "triton": "3.5.0"
+      },
+      "score_npz_sha256": "f30681ea309ed02c36152f835e22d525d78076f305eb80206e02f8cfacba448c",
+      "seed": 2
+    }
+  ],
+  "runtime_identity": {
+    "cuda": "11.8",
+    "official_actual": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+    "official_expected": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+    "torch": "2.5.1.post303",
+    "triton": "3.5.0"
+  },
+  "schema": "official_m2_m33_local_heldin_probe_v1",
+  "truth_archive_sha256": "2ef0b9456fec0434f9413cdf62501e08218ed9679098c44245c1eaaedfecd1eb"
+}

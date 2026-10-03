@@ -1,0 +1,361 @@
+{
+  "schema": "independent_cross_session_iteration_review_v1",
+  "status": "verified_complete",
+  "root": "/home/xinyuan/Work_host/SSM/results/stage_b_full_supplement/20261003_gpu_env_fix/small",
+  "matrix_sha256": "a5c15a669b3b74f5714fc6a18fd703711575393eeab85b020db65c4d9d14f858",
+  "launcher_sha256": "e89e4d2b2da9180081d39356c78386c8b8b463c09bc7db7cf5c3b3760e86d949",
+  "current_pinned_runtime": {
+    "cuda": "11.8",
+    "official_actual": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+    "official_expected": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+    "torch": "2.5.1.post303",
+    "triton": "3.5.0"
+  },
+  "expected_fit_count": 3,
+  "completed_fit_count": 3,
+  "expected_evaluation_count": 3,
+  "completed_evaluation_count": 3,
+  "selection": {
+    "selected_lr": {
+      "m2": {
+        "full": 0.0001
+      }
+    },
+    "selected_fit_count": 3
+  },
+  "task_data": {
+    "m2": {
+      "target_session": "2020-10-28-Run1",
+      "target_sha256": "45a41f15110a8c950f2439cddfa0c207179cfa97d1035c7b1776d2b3dba1c601",
+      "support_count": 2053,
+      "all_valid_count": 14115,
+      "legacy_count": 2747
+    }
+  },
+  "grouped_scores": [
+    {
+      "task": "m2",
+      "method": "full",
+      "n": 3,
+      "zero_all_valid_mean": 0.38040139207215135,
+      "zero_all_valid_population_sd": 0.0010818947364215348,
+      "ridge_all_valid_mean": 0.41190158787692094,
+      "ridge_all_valid_population_sd": 0.0003870644914483442,
+      "zero_legacy_mean": -0.09163152118889058,
+      "zero_legacy_population_sd": 0.005003577394886254,
+      "ridge_legacy_mean": -0.027505839225129947,
+      "ridge_legacy_population_sd": 0.001802494272508729
+    }
+  ],
+  "fits": [
+    {
+      "task": "m2",
+      "method": "full",
+      "seed": 0,
+      "lr": 0.0001,
+      "path": "/home/xinyuan/Work_host/SSM/results/stage_b_full_supplement/20261003_gpu_env_fix/small/m2/full/seed0/lr0p0001",
+      "best_prefix_val_r2": 0.2548348903656006,
+      "best_step": 500,
+      "completed_steps": 2000,
+      "final_budget": 2000,
+      "selection_admissible": true,
+      "convergence_satisfied": true,
+      "best_checkpoint_sha256": "59b360f10a4143899a4ef56ab2ac5f297d3b79e8c0d1b1bbf2dc191f57bb342b",
+      "last_checkpoint_sha256": "02f48ae5f321156f75ef3571b43e759b3cfdcae81746effa0932e810841e3ea2",
+      "target_data_sha256": "45a41f15110a8c950f2439cddfa0c207179cfa97d1035c7b1776d2b3dba1c601",
+      "normalizer": {
+        "x_mean": {
+          "shape": [
+            96
+          ],
+          "dtype": "float32",
+          "sha256": "d5c16683bb0d95f4e18d5081949fafb6fab2a051d5996f687d510edb220d6493"
+        },
+        "x_std": {
+          "shape": [
+            96
+          ],
+          "dtype": "float32",
+          "sha256": "c574d154059ef1d5bc605df4be831980550eb800f9005a66549c5febebfd7964"
+        },
+        "y_mean": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32",
+          "sha256": "29f5db19767b26db883f5aae7cc5f914c5c7874a42eb7ae6d0c1ddd0087a24dc"
+        },
+        "y_std": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32",
+          "sha256": "7c4cfcf4ddfe7379390cc0db69b015192c0b669e08cc50c694b0663e6dc2cf61"
+        }
+      },
+      "fit_seconds": 118.5712868347764,
+      "peak_cuda_allocated_mb": 483.1220703125,
+      "initial_trainable_params": 12930,
+      "peak_trainable_params": 364562
+    },
+    {
+      "task": "m2",
+      "method": "full",
+      "seed": 1,
+      "lr": 0.0001,
+      "path": "/home/xinyuan/Work_host/SSM/results/stage_b_full_supplement/20261003_gpu_env_fix/small/m2/full/seed1/lr0p0001",
+      "best_prefix_val_r2": 0.26325857639312744,
+      "best_step": 500,
+      "completed_steps": 2000,
+      "final_budget": 2000,
+      "selection_admissible": true,
+      "convergence_satisfied": true,
+      "best_checkpoint_sha256": "222e77521d525bedc60d152ab36a70784dc66ae557cdc55c8b50ed753ab26909",
+      "last_checkpoint_sha256": "4e1bca0e743afdc5c45efc7570df2abab7c3e5d6474b2258723e9e6638a9068d",
+      "target_data_sha256": "45a41f15110a8c950f2439cddfa0c207179cfa97d1035c7b1776d2b3dba1c601",
+      "normalizer": {
+        "x_mean": {
+          "shape": [
+            96
+          ],
+          "dtype": "float32",
+          "sha256": "d5c16683bb0d95f4e18d5081949fafb6fab2a051d5996f687d510edb220d6493"
+        },
+        "x_std": {
+          "shape": [
+            96
+          ],
+          "dtype": "float32",
+          "sha256": "c574d154059ef1d5bc605df4be831980550eb800f9005a66549c5febebfd7964"
+        },
+        "y_mean": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32",
+          "sha256": "29f5db19767b26db883f5aae7cc5f914c5c7874a42eb7ae6d0c1ddd0087a24dc"
+        },
+        "y_std": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32",
+          "sha256": "7c4cfcf4ddfe7379390cc0db69b015192c0b669e08cc50c694b0663e6dc2cf61"
+        }
+      },
+      "fit_seconds": 41.19039335893467,
+      "peak_cuda_allocated_mb": 483.1220703125,
+      "initial_trainable_params": 12930,
+      "peak_trainable_params": 364562
+    },
+    {
+      "task": "m2",
+      "method": "full",
+      "seed": 2,
+      "lr": 0.0001,
+      "path": "/home/xinyuan/Work_host/SSM/results/stage_b_full_supplement/20261003_gpu_env_fix/small/m2/full/seed2/lr0p0001",
+      "best_prefix_val_r2": 0.2602815628051758,
+      "best_step": 500,
+      "completed_steps": 2000,
+      "final_budget": 2000,
+      "selection_admissible": true,
+      "convergence_satisfied": true,
+      "best_checkpoint_sha256": "deeb7969a1d7805c03f15e2c7ae036302023bfc2c57d80d4363565b34f2fa2f5",
+      "last_checkpoint_sha256": "dc863a0dbecd27ce7a25c91490d3aafa26c18412ee614e3a386ad1c3a430f743",
+      "target_data_sha256": "45a41f15110a8c950f2439cddfa0c207179cfa97d1035c7b1776d2b3dba1c601",
+      "normalizer": {
+        "x_mean": {
+          "shape": [
+            96
+          ],
+          "dtype": "float32",
+          "sha256": "d5c16683bb0d95f4e18d5081949fafb6fab2a051d5996f687d510edb220d6493"
+        },
+        "x_std": {
+          "shape": [
+            96
+          ],
+          "dtype": "float32",
+          "sha256": "c574d154059ef1d5bc605df4be831980550eb800f9005a66549c5febebfd7964"
+        },
+        "y_mean": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32",
+          "sha256": "29f5db19767b26db883f5aae7cc5f914c5c7874a42eb7ae6d0c1ddd0087a24dc"
+        },
+        "y_std": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32",
+          "sha256": "7c4cfcf4ddfe7379390cc0db69b015192c0b669e08cc50c694b0663e6dc2cf61"
+        }
+      },
+      "fit_seconds": 40.81152994604781,
+      "peak_cuda_allocated_mb": 483.1220703125,
+      "initial_trainable_params": 12930,
+      "peak_trainable_params": 364562
+    }
+  ],
+  "evaluations": [
+    {
+      "task": "m2",
+      "method": "full",
+      "seed": 0,
+      "lr": 0.0001,
+      "fit": "/home/xinyuan/Work_host/SSM/results/stage_b_full_supplement/20261003_gpu_env_fix/small/m2/full/seed0/lr0p0001",
+      "checkpoint_sha256": "59b360f10a4143899a4ef56ab2ac5f297d3b79e8c0d1b1bbf2dc191f57bb342b",
+      "predictions_sha256": "46bca141deff6e40df2b4056c0bd2c796a7bfe80adce084bdb11c3a55eb92adf",
+      "cohort_hashes": {
+        "support_indices": "471b01f254cbcaea7e8f67e98d78144aafd5eec06f80020147400307856925f6",
+        "legacy_indices": "7918e13f6985c6634dc8c593211891017be7f6ac72a436a453d8a67edbe9e7b3",
+        "all_valid_indices": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+        "support_truth_normalized": "fdb56f691621a0c40bd5146de4cfd0748d6d4bc6ee17c3d379a592088fb70bb2",
+        "legacy_truth_physical": "4bd621a990736510156bb7d34830821e54d3ba440ddfe61716d65176ee0ba85e",
+        "all_valid_truth_physical": "650583336ab1b53305cd1cfb6a72e3d67bcc08d8d9c67be8ef2615f77c1f7651"
+      },
+      "scores": {
+        "zero_legacy": {
+          "r2": -0.09733087121238704,
+          "sse": 0.06202690524267318,
+          "sst": 0.056525253111800906,
+          "n_bins": 2747,
+          "reported_r2": -0.09733080863952637,
+          "absolute_delta": 6.257286067068435e-08
+        },
+        "ridge_legacy": {
+          "r2": -0.02810879668998889,
+          "sse": 0.05811410995937068,
+          "sst": 0.056525253111800906,
+          "n_bins": 2747,
+          "reported_r2": -0.028108596801757812,
+          "absolute_delta": 1.9988823107830456e-07
+        },
+        "zero_all_valid": {
+          "r2": 0.3803930720929948,
+          "sse": 2.1045471117159185,
+          "sst": 3.3965842164240345,
+          "n_bins": 14115,
+          "reported_r2": 0.3803930878639221,
+          "absolute_delta": 1.577092734184049e-08
+        },
+        "ridge_all_valid": {
+          "r2": 0.4121600432544681,
+          "sse": 1.9966479188652608,
+          "sst": 3.3965842164240345,
+          "n_bins": 14115,
+          "reported_r2": 0.4121600389480591,
+          "absolute_delta": 4.3064090071709415e-09
+        }
+      }
+    },
+    {
+      "task": "m2",
+      "method": "full",
+      "seed": 1,
+      "lr": 0.0001,
+      "fit": "/home/xinyuan/Work_host/SSM/results/stage_b_full_supplement/20261003_gpu_env_fix/small/m2/full/seed1/lr0p0001",
+      "checkpoint_sha256": "222e77521d525bedc60d152ab36a70784dc66ae557cdc55c8b50ed753ab26909",
+      "predictions_sha256": "9ef8719abdf109ea1f55f8af40edd65b1c5aee0c9b78466c0132d167f8e3909b",
+      "cohort_hashes": {
+        "support_indices": "471b01f254cbcaea7e8f67e98d78144aafd5eec06f80020147400307856925f6",
+        "legacy_indices": "7918e13f6985c6634dc8c593211891017be7f6ac72a436a453d8a67edbe9e7b3",
+        "all_valid_indices": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+        "support_truth_normalized": "fdb56f691621a0c40bd5146de4cfd0748d6d4bc6ee17c3d379a592088fb70bb2",
+        "legacy_truth_physical": "4bd621a990736510156bb7d34830821e54d3ba440ddfe61716d65176ee0ba85e",
+        "all_valid_truth_physical": "650583336ab1b53305cd1cfb6a72e3d67bcc08d8d9c67be8ef2615f77c1f7651"
+      },
+      "scores": {
+        "zero_legacy": {
+          "r2": -0.08514980307412467,
+          "sse": 0.061338367282985806,
+          "sst": 0.056525253111800906,
+          "n_bins": 2747,
+          "reported_r2": -0.08514964580535889,
+          "absolute_delta": 1.5726876578803228e-07
+        },
+        "ridge_legacy": {
+          "r2": -0.025059410580623664,
+          "sse": 0.0579417426377032,
+          "sst": 0.056525253111800906,
+          "n_bins": 2747,
+          "reported_r2": -0.025059223175048828,
+          "absolute_delta": 1.8740557483631903e-07
+        },
+        "zero_all_valid": {
+          "r2": 0.3817305775009213,
+          "sse": 2.1000041619579735,
+          "sst": 3.3965842164240345,
+          "n_bins": 14115,
+          "reported_r2": 0.3817305564880371,
+          "absolute_delta": 2.101288421041403e-08
+        },
+        "ridge_all_valid": {
+          "r2": 0.4121902465293611,
+          "sse": 1.9965453308984749,
+          "sst": 3.3965842164240345,
+          "n_bins": 14115,
+          "reported_r2": 0.4121902585029602,
+          "absolute_delta": 1.1973599112202749e-08
+        }
+      }
+    },
+    {
+      "task": "m2",
+      "method": "full",
+      "seed": 2,
+      "lr": 0.0001,
+      "fit": "/home/xinyuan/Work_host/SSM/results/stage_b_full_supplement/20261003_gpu_env_fix/small/m2/full/seed2/lr0p0001",
+      "checkpoint_sha256": "deeb7969a1d7805c03f15e2c7ae036302023bfc2c57d80d4363565b34f2fa2f5",
+      "predictions_sha256": "5ddc4f76656fe09c249358ccd127443063e102984656d34428a7af0be964a212",
+      "cohort_hashes": {
+        "support_indices": "471b01f254cbcaea7e8f67e98d78144aafd5eec06f80020147400307856925f6",
+        "legacy_indices": "7918e13f6985c6634dc8c593211891017be7f6ac72a436a453d8a67edbe9e7b3",
+        "all_valid_indices": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+        "support_truth_normalized": "fdb56f691621a0c40bd5146de4cfd0748d6d4bc6ee17c3d379a592088fb70bb2",
+        "legacy_truth_physical": "4bd621a990736510156bb7d34830821e54d3ba440ddfe61716d65176ee0ba85e",
+        "all_valid_truth_physical": "650583336ab1b53305cd1cfb6a72e3d67bcc08d8d9c67be8ef2615f77c1f7651"
+      },
+      "scores": {
+        "zero_legacy": {
+          "r2": -0.09241388928016003,
+          "sse": 0.0617489715944079,
+          "sst": 0.056525253111800906,
+          "n_bins": 2747,
+          "reported_r2": -0.09241378307342529,
+          "absolute_delta": 1.0620673474015518e-07
+        },
+        "ridge_legacy": {
+          "r2": -0.029349310404777285,
+          "sse": 0.058184230311087756,
+          "sst": 0.056525253111800906,
+          "n_bins": 2747,
+          "reported_r2": -0.029349207878112793,
+          "absolute_delta": 1.0252666449162007e-07
+        },
+        "zero_all_valid": {
+          "r2": 0.379080526622538,
+          "sse": 2.109005282944211,
+          "sst": 3.3965842164240345,
+          "n_bins": 14115,
+          "reported_r2": 0.37908053398132324,
+          "absolute_delta": 7.358785247824073e-09
+        },
+        "ridge_all_valid": {
+          "r2": 0.4113544738469337,
+          "sse": 1.9993841032001263,
+          "sst": 3.3965842164240345,
+          "n_bins": 14115,
+          "reported_r2": 0.4113544821739197,
+          "absolute_delta": 8.326985989626223e-09
+        }
+      }
+    }
+  ],
+  "known_limitations": [
+    "For io and full, root_input_bias_trainable and root_bias_behavior describe the LoRA bias option. Use trainable_paths, optimizer groups, and parameter hashes for the actual IO/full scope."
+  ],
+  "errors": []
+}

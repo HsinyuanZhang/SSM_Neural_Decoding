@@ -1,0 +1,603 @@
+{
+  "schema": "independent_stage_a_gpu_smoke_v1",
+  "status": "passed",
+  "task": "m1",
+  "formal_training": false,
+  "steps_per_trainable_method": 1,
+  "query_labels_used": false,
+  "source_checkpoint": "results/debug_round2/latest/m1/cross_session_mamba3_official_w256_l4_n32_ctx128_seed0/best.pt",
+  "source_checkpoint_sha256": "618ad86980e482dfaa4b0bfe038949890b53d7914d858eae76a58944fe4b4f63",
+  "target_file": "/mnt/data/work_host/SPINT/SPINT-main/data/000941/sub-MonkeyL-held-in-calib/sub-MonkeyL-held-in-calib_ses-20120928_behavior+ecephys.nwb",
+  "target_file_sha256": "96e7f078c6acb89b802b6241a36b9c9e2d04df82c180a63354fd3f7e74357254",
+  "support_bounds": [
+    [
+      0,
+      262
+    ],
+    [
+      262,
+      598
+    ],
+    [
+      598,
+      893
+    ],
+    [
+      893,
+      1162
+    ],
+    [
+      1162,
+      1424
+    ],
+    [
+      1424,
+      1684
+    ],
+    [
+      1684,
+      2082
+    ],
+    [
+      2082,
+      2326
+    ],
+    [
+      2326,
+      2717
+    ],
+    [
+      2717,
+      2962
+    ],
+    [
+      2962,
+      3263
+    ],
+    [
+      3263,
+      3642
+    ],
+    [
+      3642,
+      3893
+    ],
+    [
+      3893,
+      4148
+    ],
+    [
+      4148,
+      4393
+    ],
+    [
+      4393,
+      4673
+    ],
+    [
+      4673,
+      5068
+    ],
+    [
+      5068,
+      5324
+    ],
+    [
+      5324,
+      5569
+    ],
+    [
+      5569,
+      5839
+    ],
+    [
+      5839,
+      6103
+    ],
+    [
+      6103,
+      7103
+    ],
+    [
+      7103,
+      7367
+    ],
+    [
+      7367,
+      7609
+    ],
+    [
+      7609,
+      8009
+    ],
+    [
+      8009,
+      8272
+    ],
+    [
+      8272,
+      8537
+    ],
+    [
+      8537,
+      8811
+    ],
+    [
+      8811,
+      9175
+    ],
+    [
+      9175,
+      9548
+    ],
+    [
+      9548,
+      9822
+    ],
+    [
+      9822,
+      10084
+    ],
+    [
+      10084,
+      10361
+    ]
+  ],
+  "batch_shape": [
+    4,
+    128,
+    64
+  ],
+  "valid_scored_bins": 138,
+  "results": {
+    "none": {
+      "receipt": {
+        "schema": "mamba3_input_adaptation_v1",
+        "method": "none",
+        "rank": 4,
+        "alpha": 4,
+        "lora_scope": "all",
+        "coordinate": null,
+        "lora_paths": [],
+        "train_input_bias": true,
+        "root_input_bias_trainable": false,
+        "root_bias_behavior": "root in_proj base bias is frozen",
+        "custom_port_boundary": null,
+        "trainable_paths": [],
+        "trainable_count": 0
+      },
+      "startup_exact": true,
+      "startup_max_abs": 0.0,
+      "pre_step_causality_exact": true,
+      "pre_step_causality_max_abs": 0.0,
+      "loss": null,
+      "gradient_norm": null,
+      "gradient_none": [],
+      "gradient_nonfinite": [],
+      "gradient_nonzero_count": 0,
+      "changed_parameter_names": [],
+      "frozen_changed_parameter_names": [],
+      "post_step_causality_exact": true,
+      "post_step_causality_max_abs": 0.0
+    },
+    "io": {
+      "receipt": {
+        "schema": "mamba3_input_adaptation_v1",
+        "method": "io",
+        "rank": 4,
+        "alpha": 4,
+        "lora_scope": "all",
+        "coordinate": null,
+        "lora_paths": [],
+        "train_input_bias": true,
+        "root_input_bias_trainable": false,
+        "root_bias_behavior": "root in_proj base bias is frozen",
+        "custom_port_boundary": null,
+        "trainable_paths": [
+          "in_proj.weight",
+          "in_proj.bias",
+          "final_norm.weight",
+          "final_norm.bias",
+          "out_proj.weight",
+          "out_proj.bias"
+        ],
+        "trainable_count": 21264
+      },
+      "startup_exact": true,
+      "startup_max_abs": 0.0,
+      "pre_step_causality_exact": true,
+      "pre_step_causality_max_abs": 0.0,
+      "loss": 0.5592127442359924,
+      "gradient_norm": 1.6415879726409912,
+      "gradient_none": [],
+      "gradient_nonfinite": [],
+      "gradient_nonzero_count": 6,
+      "changed_parameter_names": [
+        "final_norm.bias",
+        "final_norm.weight",
+        "in_proj.bias",
+        "in_proj.weight",
+        "out_proj.bias",
+        "out_proj.weight"
+      ],
+      "frozen_changed_parameter_names": [],
+      "post_step_causality_exact": true,
+      "post_step_causality_max_abs": 0.0
+    },
+    "lora": {
+      "receipt": {
+        "schema": "mamba3_input_adaptation_v1",
+        "method": "lora",
+        "rank": 4,
+        "alpha": 4,
+        "lora_scope": "all",
+        "coordinate": null,
+        "lora_paths": [
+          "in_proj",
+          "out_proj",
+          "blocks.0.ssm.in_proj",
+          "blocks.0.ssm.out_proj",
+          "blocks.1.ssm.in_proj",
+          "blocks.1.ssm.out_proj",
+          "blocks.2.ssm.in_proj",
+          "blocks.2.ssm.out_proj",
+          "blocks.3.ssm.in_proj",
+          "blocks.3.ssm.out_proj"
+        ],
+        "train_input_bias": true,
+        "root_input_bias_trainable": true,
+        "root_bias_behavior": "root in_proj base bias is trainable",
+        "custom_port_boundary": null,
+        "trainable_paths": [
+          "in_proj.A",
+          "in_proj.B",
+          "in_proj.base.bias",
+          "blocks.0.ssm.in_proj.A",
+          "blocks.0.ssm.in_proj.B",
+          "blocks.0.ssm.out_proj.A",
+          "blocks.0.ssm.out_proj.B",
+          "blocks.1.ssm.in_proj.A",
+          "blocks.1.ssm.in_proj.B",
+          "blocks.1.ssm.out_proj.A",
+          "blocks.1.ssm.out_proj.B",
+          "blocks.2.ssm.in_proj.A",
+          "blocks.2.ssm.in_proj.B",
+          "blocks.2.ssm.out_proj.A",
+          "blocks.2.ssm.out_proj.B",
+          "blocks.3.ssm.in_proj.A",
+          "blocks.3.ssm.in_proj.B",
+          "blocks.3.ssm.out_proj.A",
+          "blocks.3.ssm.out_proj.B",
+          "out_proj.A",
+          "out_proj.B"
+        ],
+        "trainable_count": 36928
+      },
+      "startup_exact": true,
+      "startup_max_abs": 0.0,
+      "pre_step_causality_exact": true,
+      "pre_step_causality_max_abs": 0.0,
+      "loss": 0.547931969165802,
+      "gradient_norm": 0.3127666115760803,
+      "gradient_none": [],
+      "gradient_nonfinite": [],
+      "gradient_nonzero_count": 11,
+      "changed_parameter_names": [
+        "blocks.0.ssm.in_proj.A",
+        "blocks.0.ssm.in_proj.B",
+        "blocks.0.ssm.out_proj.A",
+        "blocks.0.ssm.out_proj.B",
+        "blocks.1.ssm.in_proj.A",
+        "blocks.1.ssm.in_proj.B",
+        "blocks.1.ssm.out_proj.A",
+        "blocks.1.ssm.out_proj.B",
+        "blocks.2.ssm.in_proj.A",
+        "blocks.2.ssm.in_proj.B",
+        "blocks.2.ssm.out_proj.A",
+        "blocks.2.ssm.out_proj.B",
+        "blocks.3.ssm.in_proj.A",
+        "blocks.3.ssm.in_proj.B",
+        "blocks.3.ssm.out_proj.A",
+        "blocks.3.ssm.out_proj.B",
+        "in_proj.A",
+        "in_proj.B",
+        "in_proj.base.bias",
+        "out_proj.A",
+        "out_proj.B"
+      ],
+      "frozen_changed_parameter_names": [],
+      "post_step_causality_exact": true,
+      "post_step_causality_max_abs": 0.0
+    },
+    "affine": {
+      "receipt": {
+        "schema": "mamba3_input_adaptation_v1",
+        "method": "affine",
+        "rank": 4,
+        "alpha": 4,
+        "lora_scope": "all",
+        "coordinate": null,
+        "lora_paths": [],
+        "train_input_bias": true,
+        "root_input_bias_trainable": false,
+        "root_bias_behavior": "root in_proj base bias is frozen",
+        "custom_port_boundary": null,
+        "trainable_paths": [
+          "input_adaptation.gain",
+          "input_adaptation.bias"
+        ],
+        "trainable_count": 128
+      },
+      "startup_exact": true,
+      "startup_max_abs": 0.0,
+      "pre_step_causality_exact": true,
+      "pre_step_causality_max_abs": 0.0,
+      "loss": 0.5592127442359924,
+      "gradient_norm": 0.2779243588447571,
+      "gradient_none": [],
+      "gradient_nonfinite": [],
+      "gradient_nonzero_count": 2,
+      "changed_parameter_names": [
+        "input_adaptation.bias",
+        "input_adaptation.gain"
+      ],
+      "frozen_changed_parameter_names": [],
+      "post_step_causality_exact": true,
+      "post_step_causality_max_abs": 0.0
+    },
+    "affine_lora": {
+      "receipt": {
+        "schema": "mamba3_input_adaptation_v1",
+        "method": "affine_lora",
+        "rank": 4,
+        "alpha": 4,
+        "lora_scope": "all",
+        "coordinate": null,
+        "lora_paths": [
+          "in_proj",
+          "out_proj",
+          "blocks.0.ssm.in_proj",
+          "blocks.0.ssm.out_proj",
+          "blocks.1.ssm.in_proj",
+          "blocks.1.ssm.out_proj",
+          "blocks.2.ssm.in_proj",
+          "blocks.2.ssm.out_proj",
+          "blocks.3.ssm.in_proj",
+          "blocks.3.ssm.out_proj"
+        ],
+        "train_input_bias": true,
+        "root_input_bias_trainable": true,
+        "root_bias_behavior": "root in_proj base bias is trainable",
+        "custom_port_boundary": null,
+        "trainable_paths": [
+          "in_proj.A",
+          "in_proj.B",
+          "in_proj.base.bias",
+          "blocks.0.ssm.in_proj.A",
+          "blocks.0.ssm.in_proj.B",
+          "blocks.0.ssm.out_proj.A",
+          "blocks.0.ssm.out_proj.B",
+          "blocks.1.ssm.in_proj.A",
+          "blocks.1.ssm.in_proj.B",
+          "blocks.1.ssm.out_proj.A",
+          "blocks.1.ssm.out_proj.B",
+          "blocks.2.ssm.in_proj.A",
+          "blocks.2.ssm.in_proj.B",
+          "blocks.2.ssm.out_proj.A",
+          "blocks.2.ssm.out_proj.B",
+          "blocks.3.ssm.in_proj.A",
+          "blocks.3.ssm.in_proj.B",
+          "blocks.3.ssm.out_proj.A",
+          "blocks.3.ssm.out_proj.B",
+          "out_proj.A",
+          "out_proj.B",
+          "input_adaptation.gain",
+          "input_adaptation.bias"
+        ],
+        "trainable_count": 37056
+      },
+      "startup_exact": true,
+      "startup_max_abs": 0.0,
+      "pre_step_causality_exact": true,
+      "pre_step_causality_max_abs": 0.0,
+      "loss": 0.547931969165802,
+      "gradient_norm": 0.4031038284301758,
+      "gradient_none": [],
+      "gradient_nonfinite": [],
+      "gradient_nonzero_count": 13,
+      "changed_parameter_names": [
+        "blocks.0.ssm.in_proj.A",
+        "blocks.0.ssm.in_proj.B",
+        "blocks.0.ssm.out_proj.A",
+        "blocks.0.ssm.out_proj.B",
+        "blocks.1.ssm.in_proj.A",
+        "blocks.1.ssm.in_proj.B",
+        "blocks.1.ssm.out_proj.A",
+        "blocks.1.ssm.out_proj.B",
+        "blocks.2.ssm.in_proj.A",
+        "blocks.2.ssm.in_proj.B",
+        "blocks.2.ssm.out_proj.A",
+        "blocks.2.ssm.out_proj.B",
+        "blocks.3.ssm.in_proj.A",
+        "blocks.3.ssm.in_proj.B",
+        "blocks.3.ssm.out_proj.A",
+        "blocks.3.ssm.out_proj.B",
+        "in_proj.A",
+        "in_proj.B",
+        "in_proj.base.bias",
+        "input_adaptation.bias",
+        "input_adaptation.gain",
+        "out_proj.A",
+        "out_proj.B"
+      ],
+      "frozen_changed_parameter_names": [],
+      "post_step_causality_exact": true,
+      "post_step_causality_max_abs": 0.0
+    },
+    "offset_rotated": {
+      "receipt": {
+        "schema": "mamba3_input_adaptation_v1",
+        "method": "offset_rotated",
+        "rank": 4,
+        "alpha": 4,
+        "lora_scope": "all",
+        "coordinate": "rotated",
+        "lora_paths": [],
+        "train_input_bias": true,
+        "root_input_bias_trainable": false,
+        "root_bias_behavior": "root in_proj base bias is frozen",
+        "custom_port_boundary": "independent full SISO windows only; no seq_idx, cu_seqlens, or inference_params",
+        "trainable_paths": [
+          "blocks.0.ssm.state_offset.U",
+          "blocks.0.ssm.state_offset.V",
+          "blocks.1.ssm.state_offset.U",
+          "blocks.1.ssm.state_offset.V",
+          "blocks.2.ssm.state_offset.U",
+          "blocks.2.ssm.state_offset.V",
+          "blocks.3.ssm.state_offset.U",
+          "blocks.3.ssm.state_offset.V",
+          "input_adaptation.gain",
+          "input_adaptation.bias"
+        ],
+        "trainable_count": 8832
+      },
+      "startup_exact": true,
+      "startup_max_abs": 0.0,
+      "pre_step_causality_exact": true,
+      "pre_step_causality_max_abs": 0.0,
+      "loss": 0.558937132358551,
+      "gradient_norm": 0.2589055001735687,
+      "gradient_none": [],
+      "gradient_nonfinite": [],
+      "gradient_nonzero_count": 6,
+      "changed_parameter_names": [
+        "blocks.0.ssm.state_offset.U",
+        "blocks.0.ssm.state_offset.V",
+        "blocks.1.ssm.state_offset.U",
+        "blocks.1.ssm.state_offset.V",
+        "blocks.2.ssm.state_offset.U",
+        "blocks.2.ssm.state_offset.V",
+        "blocks.3.ssm.state_offset.U",
+        "blocks.3.ssm.state_offset.V",
+        "input_adaptation.bias",
+        "input_adaptation.gain"
+      ],
+      "frozen_changed_parameter_names": [],
+      "post_step_causality_exact": true,
+      "post_step_causality_max_abs": 0.0
+    },
+    "offset_original": {
+      "receipt": {
+        "schema": "mamba3_input_adaptation_v1",
+        "method": "offset_original",
+        "rank": 4,
+        "alpha": 4,
+        "lora_scope": "all",
+        "coordinate": "original",
+        "lora_paths": [],
+        "train_input_bias": true,
+        "root_input_bias_trainable": false,
+        "root_bias_behavior": "root in_proj base bias is frozen",
+        "custom_port_boundary": "independent full SISO windows only; no seq_idx, cu_seqlens, or inference_params",
+        "trainable_paths": [
+          "blocks.0.ssm.state_offset.U",
+          "blocks.0.ssm.state_offset.V",
+          "blocks.1.ssm.state_offset.U",
+          "blocks.1.ssm.state_offset.V",
+          "blocks.2.ssm.state_offset.U",
+          "blocks.2.ssm.state_offset.V",
+          "blocks.3.ssm.state_offset.U",
+          "blocks.3.ssm.state_offset.V",
+          "input_adaptation.gain",
+          "input_adaptation.bias"
+        ],
+        "trainable_count": 8832
+      },
+      "startup_exact": true,
+      "startup_max_abs": 0.0,
+      "pre_step_causality_exact": true,
+      "pre_step_causality_max_abs": 0.0,
+      "loss": 0.558937132358551,
+      "gradient_norm": 0.25916969776153564,
+      "gradient_none": [],
+      "gradient_nonfinite": [],
+      "gradient_nonzero_count": 6,
+      "changed_parameter_names": [
+        "blocks.0.ssm.state_offset.U",
+        "blocks.0.ssm.state_offset.V",
+        "blocks.1.ssm.state_offset.U",
+        "blocks.1.ssm.state_offset.V",
+        "blocks.2.ssm.state_offset.U",
+        "blocks.2.ssm.state_offset.V",
+        "blocks.3.ssm.state_offset.U",
+        "blocks.3.ssm.state_offset.V",
+        "input_adaptation.bias",
+        "input_adaptation.gain"
+      ],
+      "frozen_changed_parameter_names": [],
+      "post_step_causality_exact": true,
+      "post_step_causality_max_abs": 0.0
+    },
+    "full": {
+      "receipt": {
+        "schema": "mamba3_input_adaptation_v1",
+        "method": "full",
+        "rank": 4,
+        "alpha": 4,
+        "lora_scope": "all",
+        "coordinate": null,
+        "lora_paths": [],
+        "train_input_bias": true,
+        "root_input_bias_trainable": false,
+        "root_bias_behavior": "root in_proj base bias is frozen",
+        "custom_port_boundary": null,
+        "trainable_paths": [
+          "in_proj.weight",
+          "in_proj.bias",
+          "final_norm.weight",
+          "final_norm.bias",
+          "out_proj.weight",
+          "out_proj.bias"
+        ],
+        "trainable_count": 21264
+      },
+      "startup_exact": true,
+      "startup_max_abs": 0.0,
+      "pre_step_causality_exact": true,
+      "pre_step_causality_max_abs": 0.0,
+      "loss": 0.5592127442359924,
+      "gradient_norm": 1.6415879726409912,
+      "gradient_none": [],
+      "gradient_nonfinite": [],
+      "gradient_nonzero_count": 6,
+      "changed_parameter_names": [
+        "final_norm.bias",
+        "final_norm.weight",
+        "in_proj.bias",
+        "in_proj.weight",
+        "out_proj.bias",
+        "out_proj.weight"
+      ],
+      "frozen_changed_parameter_names": [],
+      "post_step_causality_exact": true,
+      "post_step_causality_max_abs": 0.0
+    }
+  },
+  "runtime": {
+    "torch": "2.5.1.post303",
+    "cuda": "11.8",
+    "device": "cuda:0",
+    "cuda_name": "NVIDIA GeForce RTX 3090",
+    "cuda_visible_devices": "0",
+    "official_expected_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+    "official_actual_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa"
+  },
+  "code_sha256": {
+    "results/analysis/cross_session_iteration/review/gpu_method_smoke.py": "09b1eeeb89799d89014a39108f8affd657ab0d16f6393fea89446552ec5e8d5c",
+    "ssm_decode/input_adaptation.py": "e73307de29c68b715029259a5702a66a755b4f49649640efb764ee114de3d740",
+    "ssm_decode/peft.py": "e100021dff40cb9538700f8d2c14a6e25140263c2ad4ceeebd9275ad3c1ec77b",
+    "ssm_decode/mamba3_official.py": "ddef8bee9b286fd061cf4c1c0e7f832dff781492f818bbd8ad4c88afb3dc6e7b",
+    "ssm_decode/session_normalization.py": "0e09f629ee8b3c5c282a6ccd1d922f311527607adcd460f6af68be312a786668",
+    "ssm_decode/debug_experiment.py": "8f82fa061fac7cb1e2936af8c49ba3bd7822309dfad0f9ad91601457c1bb2828"
+  }
+}

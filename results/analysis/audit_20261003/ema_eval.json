@@ -1,0 +1,32 @@
+{
+  "m1/none/ema_half3000": {
+    "zero_allvalid": 0.6992366313934326,
+    "ridge_allvalid": 0.7040114402770996,
+    "zero_legacy": 0.6610376834869385
+  },
+  "m1/none/ema_half15000": {
+    "zero_allvalid": 0.6991977691650391,
+    "ridge_allvalid": 0.7013299465179443,
+    "zero_legacy": 0.6608400940895081
+  },
+  "m1/none/ema_half50000": {
+    "zero_allvalid": 0.6907727122306824,
+    "ridge_allvalid": 0.691321074962616,
+    "zero_legacy": 0.6511176228523254
+  },
+  "m2/none/ema_half3000": {
+    "zero_allvalid": 0.2658812403678894,
+    "ridge_allvalid": 0.2738099694252014,
+    "zero_legacy": -0.05376136302947998
+  },
+  "m2/none/ema_half15000": {
+    "zero_allvalid": 0.24608182907104492,
+    "ridge_allvalid": 0.2605370879173279,
+    "zero_legacy": -0.057311296463012695
+  },
+  "m2/none/ema_half50000": {
+    "zero_allvalid": 0.23821741342544556,
+    "ridge_allvalid": 0.2539979815483093,
+    "zero_legacy": -0.05843770503997803
+  }
+}

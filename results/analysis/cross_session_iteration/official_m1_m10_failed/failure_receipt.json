@@ -1,0 +1,19 @@
+{
+  "status": "rejected_before_query",
+  "planned_fit_entries": 21,
+  "completed_fit_entries": 7,
+  "completed_query_evaluations": 0,
+  "reason": "No admissible affine_lora learning rate in the old profile; launcher aborted before small/wide.",
+  "rejected_prefix_fits": [
+    {
+      "method": "affine_lora",
+      "seed": 2,
+      "lr": 0.0003,
+      "best_step": 7700,
+      "completed_steps": 8000,
+      "convergence_satisfied": false,
+      "fit_result_sha256": "f93318f746c9e107c4b0b5468ae12229805814360143b603d98e2087517fa5f3"
+    }
+  ],
+  "remediation": "Separate IO-only 12-entry probe; original artifacts and convergence thresholds preserved."
+}

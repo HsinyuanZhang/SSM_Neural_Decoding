@@ -1,0 +1,15 @@
+{
+  "fit_entries": 194,
+  "source_fits": 4,
+  "total_run_entries": 198,
+  "selected_evaluations": 122,
+  "cohort_identical_across_all_profiles": true,
+  "query_used_for_selection": false,
+  "a": "old source; trial-reset context; prefix-validation LR sweep",
+  "b": "recording causal windows; A prefix-selected LR transfer",
+  "direct": "float64 physical-unit variance-weighted R2; primary",
+  "ridge": "support residual calibration; auxiliary",
+  "spread": "population SD across adaptation seeds; none has one deterministic run",
+  "source_uncertainty": "one source-training seed; not measured by adaptation-seed SD",
+  "cost": "training allocated VRAM and wall time, including startup; no deployment latency claim"
+}

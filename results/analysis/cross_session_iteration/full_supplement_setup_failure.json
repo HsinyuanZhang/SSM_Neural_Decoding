@@ -1,0 +1,8 @@
+{
+  "status": "failed_before_fit",
+  "root": "results/stage_b_full_supplement/20261003",
+  "completed_fits": 0,
+  "completed_query_evaluations": 0,
+  "error": "subprocess environment CUDA_VISIBLE_DEVICES received integer 1 instead of string 1",
+  "remediation": "Pass string GPU ID; preserve failed prepared root; new frozen root results/stage_b_full_supplement/20261003_gpu_env_fix."
+}

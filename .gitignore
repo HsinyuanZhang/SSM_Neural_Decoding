@@ -54,3 +54,4 @@ results/analysis/**/*.h5
 results/analysis/**/*.hdf5
 results/analysis/**/__pycache__/
 results/analysis/**/*.py[cod]
+results/analysis/**/.triton_cache*/

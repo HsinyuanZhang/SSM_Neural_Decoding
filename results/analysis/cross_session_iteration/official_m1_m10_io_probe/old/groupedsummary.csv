@@ -1,0 +1,3 @@
+method,n,normalizer,policy,ridge_all_valid_r2_mean,ridge_all_valid_r2_population_sd,ridge_legacy_r2_mean,ridge_legacy_r2_population_sd,task,validation_split,zero_all_valid_r2_mean,zero_all_valid_r2_population_sd,zero_legacy_r2_mean,zero_legacy_r2_population_sd
+io,3,support,recording_causal_fixed_window,0.6057917117350542,0.0012808026823521016,0.5566329299840772,0.001507153036612244,m1,interleaved,0.6223275830097038,0.0013293651357217178,0.5817921591194155,0.0019825726554091277
+none,1,support,recording_causal_fixed_window,0.6237037923777078,0.0,0.5803540014583588,0.0,m1,interleaved,0.6730778559979442,0.0,0.6362949391000605,0.0

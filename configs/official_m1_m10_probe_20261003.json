@@ -1,0 +1,17 @@
+{
+  "purpose": "M1 legal official calibration-budget probe on the existing local development target",
+  "task": "m1",
+  "profiles": ["old", "small", "wide"],
+  "methods": ["none", "io", "affine_lora"],
+  "official_nwb_trial_budget": 10,
+  "support_segments_policy": "keep any leading neural-only pretrial segment plus the first ten real NWB trials",
+  "query_cutoff_trials": 33,
+  "validation_split": "interleaved",
+  "seeds": [0, 1, 2],
+  "lr_transfer": "Stage A prefix validation only",
+  "policy": "recording_causal_fixed_window",
+  "expected_fit_entries": 21,
+  "expected_selected_evaluations": 21,
+  "hidden_query_access": false,
+  "candidate_scope": "development only; official outcome requires private EvalAI evaluation"
+}

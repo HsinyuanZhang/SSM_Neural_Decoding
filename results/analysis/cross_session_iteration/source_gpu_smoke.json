@@ -1,0 +1,71 @@
+{
+  "scope": "10-step GPU startup/export test; not formal performance",
+  "rows": [
+    {
+      "task": "m1",
+      "capacity": "small",
+      "artifact_gate_pass": true,
+      "parameters": 362272,
+      "frontend_parameters": 768,
+      "fold_max_abs": 0.0018611103296279907,
+      "source_sessions": [
+        "20120924",
+        "20120926",
+        "20120927"
+      ],
+      "target_recording_loaded": false,
+      "manifest_sha256": "e7f409e9854bd586f91164aeeae878fbb6ca201873ad1d37e1fe14892b37565d"
+    },
+    {
+      "task": "m1",
+      "capacity": "wide",
+      "artifact_gate_pass": true,
+      "parameters": 2750544,
+      "frontend_parameters": 1152,
+      "fold_max_abs": 0.0024871826171875,
+      "source_sessions": [
+        "20120924",
+        "20120926",
+        "20120927"
+      ],
+      "target_recording_loaded": false,
+      "manifest_sha256": "3a863c8414aac5741cfacf1bf1221cd1a65cc4824386a05b488f76033dcca597"
+    },
+    {
+      "task": "m2",
+      "capacity": "small",
+      "artifact_gate_pass": true,
+      "parameters": 364562,
+      "frontend_parameters": 1920,
+      "fold_max_abs": 0.000744156539440155,
+      "source_sessions": [
+        "2020-10-19-Run1",
+        "2020-10-19-Run2",
+        "2020-10-20-Run1",
+        "2020-10-20-Run2",
+        "2020-10-27-Run1",
+        "2020-10-27-Run2"
+      ],
+      "target_recording_loaded": false,
+      "manifest_sha256": "3754e7bf348dc839446350ba41c7894a17195e5457de02bbb70d998fd1e44631"
+    },
+    {
+      "task": "m2",
+      "capacity": "wide",
+      "artifact_gate_pass": true,
+      "parameters": 2755138,
+      "frontend_parameters": 2688,
+      "fold_max_abs": 0.0029981136322021484,
+      "source_sessions": [
+        "2020-10-19-Run1",
+        "2020-10-19-Run2",
+        "2020-10-20-Run1",
+        "2020-10-20-Run2",
+        "2020-10-27-Run1",
+        "2020-10-27-Run2"
+      ],
+      "target_recording_loaded": false,
+      "manifest_sha256": "d5a5f01b11a1d9eeb4aac3605936d1b70edce1df35a7a55256f0e2e44b01785c"
+    }
+  ]
+}

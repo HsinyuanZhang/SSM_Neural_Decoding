@@ -1,0 +1,203 @@
+{
+  "schema": "independent_m1_m10_raw_trial_budget_audit_v1",
+  "status": "passed",
+  "target_session": "20120928",
+  "target_file": "/mnt/data/work_host/SPINT/SPINT-main/data/000941/sub-MonkeyL-held-in-calib/sub-MonkeyL-held-in-calib_ses-20120928_behavior+ecephys.nwb",
+  "target_sha256": "96e7f078c6acb89b802b6241a36b9c9e2d04df82c180a63354fd3f7e74357254",
+  "target_bins": 160436,
+  "trial_change_length": 160436,
+  "real_trial_start_count": 412,
+  "first_real_trial_start": 262,
+  "leading_segment": {
+    "bounds": [
+      0,
+      262
+    ],
+    "length": 262,
+    "eval_valid_bins": 0,
+    "neural_only": true
+  },
+  "official_nwb_trial_budget": 10,
+  "pilot_support_segment_count": 11,
+  "real_trial_zero_based_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "real_trial_bounds": [
+    [
+      262,
+      598
+    ],
+    [
+      598,
+      893
+    ],
+    [
+      893,
+      1162
+    ],
+    [
+      1162,
+      1424
+    ],
+    [
+      1424,
+      1684
+    ],
+    [
+      1684,
+      2082
+    ],
+    [
+      2082,
+      2326
+    ],
+    [
+      2326,
+      2717
+    ],
+    [
+      2717,
+      2962
+    ],
+    [
+      2962,
+      3263
+    ]
+  ],
+  "real_trial_lengths": [
+    336,
+    295,
+    269,
+    262,
+    260,
+    398,
+    244,
+    391,
+    245,
+    301
+  ],
+  "all_budget_trials_at_least_50_bins": true,
+  "support_bounds": [
+    [
+      0,
+      262
+    ],
+    [
+      262,
+      598
+    ],
+    [
+      598,
+      893
+    ],
+    [
+      893,
+      1162
+    ],
+    [
+      1162,
+      1424
+    ],
+    [
+      1424,
+      1684
+    ],
+    [
+      1684,
+      2082
+    ],
+    [
+      2082,
+      2326
+    ],
+    [
+      2326,
+      2717
+    ],
+    [
+      2717,
+      2962
+    ],
+    [
+      2962,
+      3263
+    ]
+  ],
+  "support_matches_leading_plus_first_ten_real": true,
+  "support_bounds_sha256": "4a92466bc61116ba0e258f0397cc72d36a6880b7f8bfb6d122d3cf65e030b268",
+  "train_bounds": [
+    [
+      0,
+      262
+    ],
+    [
+      262,
+      598
+    ],
+    [
+      598,
+      893
+    ],
+    [
+      893,
+      1162
+    ],
+    [
+      1424,
+      1684
+    ],
+    [
+      1684,
+      2082
+    ],
+    [
+      2082,
+      2326
+    ],
+    [
+      2326,
+      2717
+    ]
+  ],
+  "validation_bounds": [
+    [
+      1162,
+      1424
+    ],
+    [
+      2717,
+      2962
+    ],
+    [
+      2962,
+      3263
+    ]
+  ],
+  "query_cutoff_pilot_segments": 33,
+  "query_first_bound": [
+    10361,
+    10614
+  ],
+  "query_first_real_trial_zero_based_index": 32,
+  "fit_enumeration": {
+    "profiles": 3,
+    "none_per_profile": 1,
+    "trained_methods": 2,
+    "seeds_per_trained_method": 3,
+    "expected_fits": 21,
+    "expected_evaluations": 21
+  },
+  "launcher_sha256": "ec693d4b848596e61920976236f92369922178ce65901d97a4c7100baddb253d",
+  "config_sha256": "2dd5cdd9a4e87a013a37b6f4f389f1f13cf005962893ed1ed430a321e9d2966f",
+  "public_export_requirement": "Select official raw trial indices 0..9 directly. Do not filter raw trials by length before budget selection.",
+  "interpretation": "The local support_trials=11 field encodes one leading neural-only segment and ten official raw trials. It is not an eleven-trial official budget."
+}
