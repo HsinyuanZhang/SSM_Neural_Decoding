@@ -1,0 +1,51 @@
+{
+  "schema": "cross_session_iteration_a_v1",
+  "name": "cross_session_iteration_a",
+  "pretrained_by_task": {
+    "m1": "results/debug_round2/latest/m1/cross_session_mamba3_official_w256_l4_n32_ctx128_seed0/best.pt",
+    "m2": "results/debug_round2/latest/m2/cross_session_mamba3_official_w256_l4_n32_ctx128_seed0/best.pt"
+  },
+  "data_root": "/mnt/data/work_host/SPINT/SPINT-main/data",
+  "tasks": ["m1", "m2"],
+  "physical_gpu_by_task": {"m1": "0", "m2": "1"},
+  "seeds": [0, 1, 2],
+  "methods": {
+    "none": [0.0],
+    "io": [0.0003, 0.001],
+    "lora": [0.0003, 0.001, 0.003],
+    "affine": [0.0003, 0.001, 0.003],
+    "affine_lora": [0.0003, 0.001, 0.003],
+    "offset_rotated": [0.0003, 0.001, 0.003],
+    "offset_original": [0.0003, 0.001, 0.003],
+    "full": [0.0001, 0.0003]
+  },
+  "support_trials": 33,
+  "query_cutoff_trials": 33,
+  "normalization": "support",
+  "validation_split": "interleaved",
+  "policy": "trial_causal_fixed_window",
+  "context": 128,
+  "batch_size": 32,
+  "eval_batch_size": 256,
+  "val_interval": 100,
+  "steps": 2000,
+  "max_steps": 8000,
+  "rank": 4,
+  "alpha": 4,
+  "lora_scope": "all",
+  "full_initialization": "source",
+  "weight_decay": 0.0001,
+  "train_input_bias": true,
+  "code_files": [
+    "ssm_decode/cross_session_iteration.py",
+    "ssm_decode/session_normalization.py",
+    "ssm_decode/input_adaptation.py",
+    "ssm_decode/debug_experiment.py",
+    "ssm_decode/calibration.py",
+    "ssm_decode/models.py",
+    "ssm_decode/modern_models.py",
+    "ssm_decode/data.py",
+    "ssm_decode/mamba3_official.py",
+    "ssm_decode/peft.py"
+  ]
+}

@@ -43,3 +43,14 @@ results/peft_round1/official_w256_l4_n32/*
 results/peft_round1/bc_rank8_budget_control/*
 !results/peft_round1/bc_rank8_budget_control/code_snapshot/
 !results/peft_round1/bc_rank8_budget_control/code_snapshot/**
+
+# The analysis exception includes only reviewable text and figures.
+results/analysis/**/*.pt
+results/analysis/**/*.ckpt
+results/analysis/**/*.npz
+results/analysis/**/*.log
+results/analysis/**/*.nwb
+results/analysis/**/*.h5
+results/analysis/**/*.hdf5
+results/analysis/**/__pycache__/
+results/analysis/**/*.py[cod]
