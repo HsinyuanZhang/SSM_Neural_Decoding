@@ -1,0 +1,40 @@
+{
+  "schema": "unit_session_iteration_v1",
+  "tasks": {
+    "m1": {"physical_gpu": 0, "width": 128, "layers": 2, "raw_support_trials": 10, "expected_query_bins": 50591,
+      "expected_indices_sha256": "5b8be6ddfbd58edc28097c500b5e52532db4a711b2f2537a3c4c6cbc92936728",
+      "expected_truth_sha256": "437fff0d49a343e443874ba304a77a06917d10e9ff84ebceecfaa8b4625e75e7"},
+    "m2": {"physical_gpu": 1, "width": 256, "layers": 4, "raw_support_trials": 33, "expected_query_bins": 14115,
+      "expected_indices_sha256": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+      "expected_truth_sha256": "650583336ab1b53305cd1cfb6a72e3d67bcc08d8d9c67be8ef2615f77c1f7651"}
+  },
+  "variants": [
+    {"name": "affine", "unit_residual": false, "session_readout": false},
+    {"name": "unit", "unit_residual": true, "session_readout": false},
+    {"name": "unit_readout", "unit_residual": true, "session_readout": true}
+  ],
+  "source_seed": 0,
+  "adapt_seeds": [0, 1, 2],
+  "adapt_lrs": [0.0003, 0.003],
+  "steps": 2000,
+  "max_steps": 8000,
+  "val_interval": 100,
+  "context": 128,
+  "batch_size": 32,
+  "eval_batch_size": 256,
+  "state_size": 32,
+  "dropout": 0.2,
+  "source_lr": 0.001,
+  "weight_decay": 0.001,
+  "source_unit_penalty": 0.01,
+  "target_anchor_penalty": 0.01,
+  "gain_sigma": 0.3,
+  "offset_sigma": 0.1,
+  "channel_dropout": 0.05,
+  "max_source_val_endpoints_per_session": 1024,
+  "query_cutoff_usable_trials": 33,
+  "data_root": "/mnt/data/work_host/SPINT/SPINT-main/data",
+  "policy": "recording_causal_fixed_window",
+  "selection": "mean prefix-validation R2 over all three converged seeds; reject a late maximum at the maximum budget",
+  "scope": "local held-in development; no EvalAI submission; no association-profile features"
+}

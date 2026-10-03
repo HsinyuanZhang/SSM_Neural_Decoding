@@ -1,0 +1,140 @@
+{
+  "acceptance": {
+    "float64_r2_delta_required": 0.0,
+    "prediction_bitwise_equal_required": true,
+    "prediction_max_abs_required": 0.0,
+    "raw_cohort_and_truth_match_formal_bitwise_required": true
+  },
+  "arrays_in_receipt": false,
+  "bindings": {
+    "config_sha256": "d0dacf99e723eeb3e0ec3ccec4a892603aa9829d785c1dedc912b6872db3bc92",
+    "final_score_audit_sha256": "55969ecf2ad33ef782f109f8c3876ac06ae5c4c00894edb2139bff4c9a6372ec",
+    "fit_seal_sha256": "d54522362911480a0289c0dd9f87357757cc318a3c5517d58b8de238f26d7c8b",
+    "score_verifier_sha256": "3bcfff2b918fb189321f240b41d56a60ab545f721f04d0175d71017071aec4f9"
+  },
+  "cases": {
+    "m1": {
+      "arrays_in_receipt": false,
+      "bindings": {
+        "checkpoint_sha256": "2c5615ca6001d65aeb02d88db8e62226682a7d0a3c98fb4270e6f2db6fa5d5fe",
+        "config_sha256": "d0dacf99e723eeb3e0ec3ccec4a892603aa9829d785c1dedc912b6872db3bc92",
+        "final_score_audit_sha256": "55969ecf2ad33ef782f109f8c3876ac06ae5c4c00894edb2139bff4c9a6372ec",
+        "fit_seal_sha256": "d54522362911480a0289c0dd9f87357757cc318a3c5517d58b8de238f26d7c8b",
+        "formal_prediction_archive_sha256": "015d6329bd041944d663f02ebf129385756c038bc008d12c4aa535c1272156c3",
+        "normalizer_sha256": "91ce521d3bd49b160038a3eab5153d005edbb8746339bf0a7d93df83efa6def5",
+        "raw_target_sha256": "96e7f078c6acb89b802b6241a36b9c9e2d04df82c180a63354fd3f7e74357254",
+        "score_verifier_sha256": "3bcfff2b918fb189321f240b41d56a60ab545f721f04d0175d71017071aec4f9",
+        "task_completion_sha256": "86d91b5b0d8056864383d26a9af1c45c6d984e65d84f6f57a17ed099dafa97d2",
+        "task_contract_sha256": "91115365a92503861b3198f154e186a8bd741db576bf37135a9e1c1bed5bed71",
+        "task_summary_sha256": "1a591615fb3caad9487877702cd7f31b07ae11251832b7b6917883e967043190"
+      },
+      "case": {
+        "lr": 0.003,
+        "method": "ui",
+        "seed": 0,
+        "variant": "unit"
+      },
+      "cohort": {
+        "indices_sha256": "5b8be6ddfbd58edc28097c500b5e52532db4a711b2f2537a3c4c6cbc92936728",
+        "query_bins": 50591,
+        "raw_matches_formal_bitwise": true,
+        "truth_sha256": "437fff0d49a343e443874ba304a77a06917d10e9ff84ebceecfaa8b4625e75e7"
+      },
+      "formal_arrays_modified": false,
+      "prediction_replay": {
+        "bitwise_equal": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "mismatch_scalar_count": 0,
+        "replay_prediction_sha256": "239287dc0696a304114a55985d00762389a47c4c666bdebe1cf5e977560962f2",
+        "saved_prediction_sha256": "239287dc0696a304114a55985d00762389a47c4c666bdebe1cf5e977560962f2"
+      },
+      "r2": {
+        "replay_float64": 0.5790314195554307,
+        "replay_minus_saved": 0.0,
+        "saved_minus_summary": 0.0,
+        "saved_recomputed_float64": 0.5790314195554307,
+        "summary": 0.5790314195554307
+      },
+      "runtime": {
+        "cuda": "11.8",
+        "cuda_visible_devices": "0",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "device_total_memory_bytes": 25435766784,
+        "physical_gpu": 0,
+        "torch": "2.5.1.post303",
+        "visible_device": 0
+      },
+      "schema": "unit_session_gpu_query_replay_v1",
+      "scope": "independent raw-data full-GPU local-query replay",
+      "status": "PASS",
+      "task": "m1"
+    },
+    "m2": {
+      "arrays_in_receipt": false,
+      "bindings": {
+        "checkpoint_sha256": "34d6fd09aeb682e1d48b63671cc982d58fec5592507be2a56924f2d77cef39a5",
+        "config_sha256": "d0dacf99e723eeb3e0ec3ccec4a892603aa9829d785c1dedc912b6872db3bc92",
+        "final_score_audit_sha256": "55969ecf2ad33ef782f109f8c3876ac06ae5c4c00894edb2139bff4c9a6372ec",
+        "fit_seal_sha256": "d54522362911480a0289c0dd9f87357757cc318a3c5517d58b8de238f26d7c8b",
+        "formal_prediction_archive_sha256": "95a724d657c94cd519f9f98786bc328af0d2f21f78c7c9acd10b81a233da509a",
+        "normalizer_sha256": "d41410f9cb2cc3c50437091e410c3cfc47c6fbd05f858532dee4027aafb6d7e4",
+        "raw_target_sha256": "45a41f15110a8c950f2439cddfa0c207179cfa97d1035c7b1776d2b3dba1c601",
+        "score_verifier_sha256": "3bcfff2b918fb189321f240b41d56a60ab545f721f04d0175d71017071aec4f9",
+        "task_completion_sha256": "f18845c7d0638dd827d68593f5c9f5409ded77de43b3195390d123ab5a51a231",
+        "task_contract_sha256": "ae35660c75d58a7ead4cd7eba466e3109efff378054b3e5838cde2c8a434d3bb",
+        "task_summary_sha256": "ffcfea78e2813d2c1fe43a57d1d8a709d02844a4474337a16e43b53a36bef39a"
+      },
+      "case": {
+        "lr": 0.0003,
+        "method": "ui",
+        "seed": 0,
+        "variant": "unit_readout"
+      },
+      "cohort": {
+        "indices_sha256": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+        "query_bins": 14115,
+        "raw_matches_formal_bitwise": true,
+        "truth_sha256": "650583336ab1b53305cd1cfb6a72e3d67bcc08d8d9c67be8ef2615f77c1f7651"
+      },
+      "formal_arrays_modified": false,
+      "prediction_replay": {
+        "bitwise_equal": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "mismatch_scalar_count": 0,
+        "replay_prediction_sha256": "8e059b141b7d6f3cb7e72a78993a330e423acecb441877f77caa28329e7582fb",
+        "saved_prediction_sha256": "8e059b141b7d6f3cb7e72a78993a330e423acecb441877f77caa28329e7582fb"
+      },
+      "r2": {
+        "replay_float64": 0.42001765676909397,
+        "replay_minus_saved": 0.0,
+        "saved_minus_summary": 0.0,
+        "saved_recomputed_float64": 0.42001765676909397,
+        "summary": 0.42001765676909397
+      },
+      "runtime": {
+        "cuda": "11.8",
+        "cuda_visible_devices": "1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "device_total_memory_bytes": 25438126080,
+        "physical_gpu": 1,
+        "torch": "2.5.1.post303",
+        "visible_device": 0
+      },
+      "schema": "unit_session_gpu_query_replay_v1",
+      "scope": "independent raw-data full-GPU local-query replay",
+      "status": "PASS",
+      "task": "m2"
+    }
+  },
+  "formal_arrays_modified": false,
+  "replay_program_sha256": "64f099351a97d24576f7f40c1ccff1496c1ecf3e76348b34c57dfea6a385097c",
+  "run_receipt_sha256": {
+    "m1": "8722a1e8ad1446d509841d10037eb0f9f048fb6addb9a822f7cc22c79c6943bd",
+    "m2": "3a1bc2dc9a87af5aa5ce3892e614f76eaf4e17be9af51a45d753bf65982d1b17"
+  },
+  "schema": "unit_session_gpu_query_replay_audit_v1",
+  "scope": "two predeclared raw-data full-GPU local-query replays",
+  "status": "PASS"
+}

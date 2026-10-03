@@ -1,0 +1,10 @@
+{
+  "schema": "unit_session_external_fit_seal_receipt_v1",
+  "fit_root": "/home/xinyuan/Work_host/SSM/results/unit_session_iteration_20261004",
+  "fit_seal_sha256": "d54522362911480a0289c0dd9f87357757cc318a3c5517d58b8de238f26d7c8b",
+  "fit_process_exit_code": 0,
+  "fit_result_count": 48,
+  "score_started_at_recording": false,
+  "query_artifacts_present_at_recording": false,
+  "recorded_utc": "2026-10-03T17:14:49.318279+00:00"
+}

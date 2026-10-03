@@ -1,0 +1,105 @@
+{
+  "schema": "unit_session_pretraining_audit_v1",
+  "status": "go_fit_only",
+  "scope": "local held-in feasibility fit phase only",
+  "query_scoring_authorized": false,
+  "private_evaluation_authorized": false,
+  "frozen_sha256": {
+    "ssm_decode/unit_session_frontend.py": "aa469729a75a2c6ab8fcceb2e79b07ae29e5d3d8e66da5bc698032daded8f905",
+    "ssm_decode/unit_session_experiment.py": "314987385d9b41c3a76871f7a9460c782fe5d4f5915ca62f3a5efedc096be696",
+    "configs/unit_session_iteration_20261004.json": "d0dacf99e723eeb3e0ec3ccec4a892603aa9829d785c1dedc912b6872db3bc92",
+    "scripts/run_unit_session_iteration.py": "cdbd34044eb0f3b97974e4beb89019e70e3003302b77822fe731e6f466a7a24f"
+  },
+  "cpu_verification": {
+    "status": "passed",
+    "tests": 52,
+    "command_scope": [
+      "tests/test_unit_session_frontend.py",
+      "tests/test_unit_session_experiment.py",
+      "tests/test_session_frontend.py",
+      "tests/test_session_pretraining.py",
+      "tests/test_official_calibration.py",
+      "tests/test_cross_session_iteration.py"
+    ],
+    "py_compile_passed": true,
+    "git_diff_check_passed": true
+  },
+  "independent_gpu_smoke": {
+    "status": "passed",
+    "m1": {
+      "physical_gpu": 0,
+      "shape": [2, 64, 16],
+      "forward_finite": true,
+      "backward_finite": true,
+      "future_prefix_max_abs": 0.0,
+      "initial_fold_max_abs": 0.0
+    },
+    "m2": {
+      "physical_gpu": 1,
+      "shape": [2, 64, 2],
+      "forward_finite": true,
+      "backward_finite": true,
+      "future_prefix_max_abs": 0.0,
+      "initial_fold_max_abs": 0.0
+    }
+  },
+  "matched_source_initialization": {
+    "status": "passed",
+    "source_seed": 0,
+    "variants": ["affine", "unit", "unit_readout"],
+    "m1_base_tensors": 38,
+    "m2_base_tensors": 70,
+    "base_hashes_equal_across_variants": true
+  },
+  "data_and_cohorts": {
+    "m1": {
+      "target_session": "20120928",
+      "source_sessions": 3,
+      "input_channels": 64,
+      "outputs": 16,
+      "calibration_raw_trials": 10,
+      "validation_raw_trial_indices": [4, 9],
+      "leading_pretrial_bins": 262,
+      "calibration_prefix_end": 3263,
+      "calibration_rawfile_sha256": "96e7f078c6acb89b802b6241a36b9c9e2d04df82c180a63354fd3f7e74357254",
+      "query_bins": 50591,
+      "query_indices_sha256": "5b8be6ddfbd58edc28097c500b5e52532db4a711b2f2537a3c4c6cbc92936728",
+      "query_truth_float32_bytes_sha256": "437fff0d49a343e443874ba304a77a06917d10e9ff84ebceecfaa8b4625e75e7"
+    },
+    "m2": {
+      "target_session": "2020-10-28-Run1",
+      "source_sessions": 6,
+      "input_channels": 96,
+      "outputs": 2,
+      "calibration_raw_trials": 33,
+      "validation_raw_trial_indices": [4, 9, 14, 19, 24, 29, 32],
+      "short_raw_trials_retained": 6,
+      "leading_pretrial_bins": 0,
+      "calibration_prefix_end": 1996,
+      "calibration_rawfile_sha256": "45a41f15110a8c950f2439cddfa0c207179cfa97d1035c7b1776d2b3dba1c601",
+      "query_bins": 14115,
+      "query_indices_sha256": "3fd5abf8209729768c343ade5072217e7b5127801431520141d0288cff8551f1",
+      "query_truth_float32_bytes_sha256": "650583336ab1b53305cd1cfb6a72e3d67bcc08d8d9c67be8ef2615f77c1f7651"
+    }
+  },
+  "protocol_checks": {
+    "effective_map_regularization_and_anchor": true,
+    "effective_source_mean_target_initializer": true,
+    "source_macro_session_validation": true,
+    "source_full_validation_fold_gate": true,
+    "target_full_public_prefix_fold_gate": true,
+    "primary_local_query_model": "unmerged",
+    "representation": "session-specific channel read-in; no biological unit alignment",
+    "launcher_default_phase": "fit",
+    "fit_and_score_are_separate": true,
+    "external_fit_seal_required_before_score": true,
+    "all_task_gates_precede_any_score_process": true
+  },
+  "fit_plan": {
+    "tasks": ["m1", "m2"],
+    "source_fits_per_task": 3,
+    "target_fits_per_task": 21,
+    "total_fits": 48,
+    "query_metrics_read_during_fit": false
+  }
+}
